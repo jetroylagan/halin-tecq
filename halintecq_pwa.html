@@ -2669,23 +2669,40 @@ function renderBackupMeta() {
   if (!el) return;
 
   const lastBackup = localStorage.getItem('gcash_last_backup');
+  el.style.display = '';
   if (lastBackup) {
     const d = new Date(lastBackup);
-    el.style.display = '';
     el.innerHTML = `✅ Last backup: <strong>${d.toLocaleDateString('en-PH', { month:'short', day:'numeric', year:'numeric' })} ${d.toLocaleTimeString('en-PH', { hour:'2-digit', minute:'2-digit' })}</strong>`;
+  } else {
+    el.innerHTML = `✅ Last backup: <strong>Never</strong>`;
   }
 }
 
-function renderCloudSyncMeta() {
+function _fmtCloudSync(iso) {
+  if (!iso) return `☁️ Last push to cloud: <strong>Never</strong>`;
+  const d = new Date(iso);
+  return `☁️ Last push to cloud: <strong>${d.toLocaleDateString('en-PH', { month:'short', day:'numeric', year:'numeric' })} ${d.toLocaleTimeString('en-PH', { hour:'2-digit', minute:'2-digit' })}</strong>`;
+}
+
+async function renderCloudSyncMeta() {
   const el = document.getElementById('cloudSyncMeta');
   if (!el) return;
-  const lastSync = localStorage.getItem('gcash_last_cloud_sync');
-  if (lastSync) {
-    const d = new Date(lastSync);
-    el.style.display = '';
-    el.innerHTML = `☁️ Last push to cloud: <strong>${d.toLocaleDateString('en-PH', { month:'short', day:'numeric', year:'numeric' })} ${d.toLocaleTimeString('en-PH', { hour:'2-digit', minute:'2-digit' })}</strong>`;
-  } else {
-    el.style.display = 'none';
+  el.style.display = '';
+
+  // Show cached value immediately while the fetch is in-flight
+  el.innerHTML = _fmtCloudSync(localStorage.getItem('gcash_last_cloud_sync'));
+
+  if (!_sbClient || !_sbUser) return;
+  try {
+    const { data } = await _sbClient.from('settings')
+      .select('last_synced_at')
+      .eq('user_id', _sbUser.id)
+      .maybeSingle();
+    const ts = data?.last_synced_at || null;
+    if (ts) localStorage.setItem('gcash_last_cloud_sync', ts);
+    el.innerHTML = _fmtCloudSync(ts);
+  } catch(e) {
+    // Network error — keep the cached value already shown
   }
 }
 
@@ -2936,6 +2953,26 @@ function updateTallyTotals() {
   document.getElementById('tallyGrandTotal').textContent  = fmtW(grand);
   document.getElementById('tallyCOHDisplay').textContent  = fmtW(coh);
   document.getElementById('tallyGCashDisplay').textContent= fmtW(gcashTotal);
+  updateDeficitDisplay();
+}
+
+function updateDeficitDisplay() {
+  const bal = calcBalances();
+  const total = bal.coh + bal.cog;
+  const tallyGrandTotal = TALLY_DENOMS.reduce((s, d) => s + (tallyState.denoms[d] || 0) * d, 0)
+    + (tallyState.denoms.uncollected || 0)
+    + tallyState.gcash.reduce((s, a) => s + (parseFloat(a.amount) || 0), 0);
+  const deficit = total - tallyGrandTotal;
+  const deficitBadge = document.getElementById('deficitBadge');
+  const dEl = document.getElementById('dispDeficit');
+  if (deficitBadge && dEl) {
+    if (deficit === 0 || tallyGrandTotal === 0) {
+      deficitBadge.style.display = 'none';
+    } else {
+      deficitBadge.style.display = 'inline-flex';
+      dEl.textContent = (deficit > 0 ? 'Short ' : 'Over ') + fmt(Math.abs(deficit));
+    }
+  }
 }
 
 function renderGCashTable() {
@@ -3780,10 +3817,11 @@ async function sbPushAll(silent = false) {
 async function sbPushSettings() {
   if (!_sbClient || !_sbUser) return;
   const { error } = await _sbClient.from('settings').upsert({
-    user_id:  _sbUser.id,
-    open_coh: state.settings.openCOH,
-    open_cog: state.settings.openCOG,
-    capital:  state.settings.capital,
+    user_id:       _sbUser.id,
+    open_coh:      state.settings.openCOH,
+    open_cog:      state.settings.openCOG,
+    capital:       state.settings.capital,
+    last_synced_at: new Date().toISOString(),
   });
   if (error) throw Object.assign(error, { _step: 'upsert settings' });
 }
