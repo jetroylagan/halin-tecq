@@ -1114,7 +1114,7 @@
       <!-- Data Management -->
       <div class="card" style="padding:0;overflow:hidden;margin-bottom:12px;">
         <div class="card-hdr"><div class="card-hdr-title">Data</div></div>
-        <div id="backupMeta" style="display:none;background:var(--surface2);border-radius:0;padding:8px 16px;font-size:12px;border-bottom:1px solid var(--border);"></div>
+        <div id="backupMeta" style="background:var(--surface2);border-radius:0;padding:8px 16px;font-size:12px;border-bottom:1px solid var(--border);"></div>
         <button class="row-btn" onclick="backupJSON()">
           <div class="row-btn-icon teal"><i class="ti ti-device-floppy"></i></div>
           <div class="row-btn-body"><div>Save Backup</div><div class="row-btn-sub">Export as .json file</div></div>
@@ -2664,17 +2664,30 @@ function restoreJSON(input) {
   reader.readAsText(file);
 }
 
-function renderBackupMeta() {
+function _fmtBackup(iso) {
+  if (!iso) return `✅ Last backup: <strong>Never</strong>`;
+  const d = new Date(iso);
+  return `✅ Last backup: <strong>${d.toLocaleDateString('en-PH', { month:'short', day:'numeric', year:'numeric' })} ${d.toLocaleTimeString('en-PH', { hour:'2-digit', minute:'2-digit' })}</strong>`;
+}
+
+async function renderBackupMeta() {
   const el = document.getElementById('backupMeta');
   if (!el) return;
-
-  const lastBackup = localStorage.getItem('gcash_last_backup');
   el.style.display = '';
-  if (lastBackup) {
-    const d = new Date(lastBackup);
-    el.innerHTML = `✅ Last backup: <strong>${d.toLocaleDateString('en-PH', { month:'short', day:'numeric', year:'numeric' })} ${d.toLocaleTimeString('en-PH', { hour:'2-digit', minute:'2-digit' })}</strong>`;
-  } else {
-    el.innerHTML = `✅ Last backup: <strong>Never</strong>`;
+
+  el.innerHTML = _fmtBackup(localStorage.getItem('gcash_last_backup'));
+
+  if (!_sbClient || !_sbUser) return;
+  try {
+    const { data } = await _sbClient.from('settings')
+      .select('last_backup_at')
+      .eq('user_id', _sbUser.id)
+      .maybeSingle();
+    const ts = data?.last_backup_at || null;
+    if (ts) localStorage.setItem('gcash_last_backup', ts);
+    el.innerHTML = _fmtBackup(ts);
+  } catch(e) {
+    // Network error — keep the cached value already shown
   }
 }
 
@@ -2724,7 +2737,9 @@ function backupJSON() {
   a.download = `halin-backup-full-${dateStr}.json`;
   a.click();
   URL.revokeObjectURL(a.href);
-  localStorage.setItem('gcash_last_backup', new Date().toISOString());
+  const backupTs = new Date().toISOString();
+  localStorage.setItem('gcash_last_backup', backupTs);
+  sbPushLastBackupAt(backupTs);
   showToast(`Backup saved — ${state.transactions.length} transactions`);
   renderBackupMeta();
 }
@@ -3834,6 +3849,13 @@ async function sbPushTally() {
     gcash:   tallyState.gcash,
   });
   if (error) throw Object.assign(error, { _step: 'upsert tally_state' });
+}
+
+async function sbPushLastBackupAt(iso) {
+  if (!_sbClient || !_sbUser) return;
+  try {
+    await _sbClient.from('settings').upsert({ user_id: _sbUser.id, last_backup_at: iso });
+  } catch(e) {}
 }
 
 async function sbPull() {
