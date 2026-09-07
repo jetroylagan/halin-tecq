@@ -185,7 +185,7 @@
   }
   .bh-pod.coh { background: linear-gradient(135deg,rgba(245,158,11,.12) 0%,rgba(245,158,11,.06) 100%); border:1px solid rgba(245,158,11,.2); }
   .bh-pod.cog { background: linear-gradient(135deg,rgba(45,212,191,.12) 0%,rgba(45,212,191,.06) 100%); border:1px solid rgba(45,212,191,.2); }
-  .bh-pod-label { font-size:9px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; margin-bottom:8px; position:relative; }
+  .bh-pod-label { font-size:11px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; margin-bottom:8px; position:relative; }
   .bh-pod.coh .bh-pod-label { color: rgba(245,158,11,.7); }
   .bh-pod.cog .bh-pod-label { color: rgba(45,212,191,.7); }
   .bh-pod-amount {
@@ -196,7 +196,7 @@
   .bh-pod.cog .bh-pod-amount { background-image: linear-gradient(135deg,#2DD4BF 0%,#5EEAD4 60%,#0D9488 100%); }
   .bh-bottom { display:flex; border-top:1px solid var(--border); padding:10px 16px; gap:16px; }
   .bh-stat { flex:1; }
-  .bh-stat-label { font-size:9px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-bottom:4px; }
+  .bh-stat-label { font-size:11px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-bottom:4px; }
   .bh-stat-val { font-family:var(--mono); font-size:15px; font-weight:800; line-height:1; }
   .bh-stat-val.earned { color:var(--purple); }
   .bh-stat-val.total  { color:var(--text); }
@@ -220,7 +220,7 @@
   .sec-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; }
   .sec-link { font-size:11px; font-weight:700; color:var(--indigo); cursor:pointer; }
   .card-hdr { display:flex; align-items:center; justify-content:space-between; padding:12px 16px; border-bottom:1px solid var(--border); background:var(--s2); border-radius:var(--radius) var(--radius) 0 0; }
-  .card-hdr-title { font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
+  .card-hdr-title { font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
   .card-pad { padding:14px 16px; }
 
   /* ── COLLAPSIBLE HEADER ── */
@@ -419,14 +419,14 @@
   .txn-earn-inline { font-size: 13px; font-family: var(--mono); font-weight: 600; text-align: right; flex-shrink: 0; font-variant-numeric: tabular-nums; min-width: 36px; }
   .txn-line2 { display: flex; align-items: center; gap: 6px; margin-top: 4px; margin-left: 43px; }
   .txn-line3 { display: flex; align-items: center; margin-top: 3px; margin-left: 43px; }
-  .txn-notes-txt { font-size: 10px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-style: italic; }
-  .txn-meta-txt { font-size: 10px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex-shrink: 1; min-width: 0; }
+  .txn-notes-txt { font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-style: italic; }
+  .txn-meta-txt { font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex-shrink: 1; min-width: 0; }
   .txn-sep { display: none; }
   .txn-bal-inline { display: flex; align-items: center; gap: 3px; flex-shrink: 0; }
-  .txn-bal-key { font-size: 9px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
-  .txn-bal-coh { font-size: 10px; font-weight: 600; color: var(--amber); font-family: var(--mono); font-variant-numeric: tabular-nums; }
-  .txn-bal-cog { font-size: 10px; font-weight: 600; color: var(--blue);  font-family: var(--mono); font-variant-numeric: tabular-nums; }
-  .txn-bal-dot { font-size: 9px; color: var(--border); }
+  .txn-bal-key { font-size: 10px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+  .txn-bal-coh { font-size: 12px; font-weight: 600; color: var(--amber); font-family: var(--mono); font-variant-numeric: tabular-nums; }
+  .txn-bal-cog { font-size: 12px; font-weight: 600; color: var(--blue);  font-family: var(--mono); font-variant-numeric: tabular-nums; }
+  .txn-bal-dot { font-size: 10px; color: var(--border); }
   .txn-edit-inline { font-size: 10px; font-weight: 700; color: var(--blue); border: 1.5px solid rgba(129,140,248,.4); background: rgba(129,140,248,.08); border-radius: 10px; padding: 2px 8px; cursor: pointer; flex-shrink: 0; white-space: nowrap; margin-left: auto; }
 
   /* ── INLINE ACTION BUTTONS (Edit / Delete) ── */
@@ -708,8 +708,8 @@
   .tally-sum-input { width:100%; background:var(--surface2); border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--amber); font-family:var(--mono); font-size:clamp(9px, 2.8vw, 13px); padding:5px 8px; text-align:right; outline:none; -webkit-appearance:none; appearance:none; }
   .tally-sum-input:focus { border-color:var(--teal); }
   .tally-total-row { background:var(--surface2); }
-  .tally-total-row td { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); padding:10px 14px; border-top:2px solid var(--border); border-bottom:none; }
-  .tally-total-val { font-family:var(--mono); font-size:clamp(11px, 3.2vw, 16px); font-weight:800; color:var(--teal); text-align:right; font-variant-numeric:tabular-nums; }
+  .tally-total-row td { font-size:14px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); padding:10px 14px; border-top:2px solid var(--border); border-bottom:none; }
+  .tally-total-val { font-family:var(--mono); font-size:clamp(13px, 3.8vw, 18px); font-weight:800; color:var(--teal); text-align:right; font-variant-numeric:tabular-nums; }
   #tallyCOHTotal { color: var(--amber); }
   #tallyGCashTotal { color: var(--teal); }
   .tally-gcash-name { background:var(--surface2); border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--text); font-size:13px; padding:5px 8px; outline:none; width:100%; }
@@ -730,7 +730,7 @@
   .tally-mini-pod { padding:14px; border-radius:var(--radius); border:1px solid var(--border); position:relative; overflow:hidden; }
   .tally-mini-pod.coh { background:linear-gradient(135deg,#1C1400 0%,#221900 100%); border-color:rgba(245,158,11,.2); }
   .tally-mini-pod.cog { background:linear-gradient(135deg,#001A18 0%,#002420 100%); border-color:rgba(45,212,191,.2); }
-  .tmp-label { font-size:9px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; margin-bottom:6px; }
+  .tmp-label { font-size:11px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; margin-bottom:6px; }
   .tally-mini-pod.coh .tmp-label { color:rgba(245,158,11,.6); }
   .tally-mini-pod.cog .tmp-label { color:rgba(45,212,191,.6); }
   .tmp-val { font-family:var(--mono); font-size:22px; font-weight:700; letter-spacing:-.4px; -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
@@ -746,9 +746,9 @@
   .ring-fill { fill:none; stroke:var(--teal); stroke-width:5; stroke-linecap:round; transform-origin:center; transform:rotate(-90deg); transition:stroke-dashoffset .8s cubic-bezier(.34,1.2,.64,1); filter:drop-shadow(0 0 6px rgba(45,212,191,.4)); }
   .ring-pct  { font-family:var(--mono); font-size:9px; font-weight:700; fill:var(--teal); text-anchor:middle; dominant-baseline:middle; }
   .earn-info { flex:1; min-width:0; }
-  .earn-label  { font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
+  .earn-label  { font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
   .earn-amount { font-family:var(--mono); font-size:28px; font-weight:800; color:var(--teal); line-height:1; letter-spacing:-.5px; }
-  .earn-avg    { font-size:11px; color:var(--muted); margin-top:5px; }
+  .earn-avg    { font-size:13px; color:var(--muted); margin-top:5px; }
 
   /* ── QUICK STATS (Home) ── */
   .qs-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:12px; }
@@ -757,7 +757,7 @@
   .qs-card.in::before  { background:radial-gradient(circle,rgba(52,211,153,.15) 0%,transparent 70%); }
   .qs-card.out::before { background:radial-gradient(circle,rgba(248,113,113,.12) 0%,transparent 70%); }
   .qs-val { font-family:var(--mono); font-size:18px; font-weight:700; line-height:1; margin-bottom:4px; }
-  .qs-lbl { font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); }
+  .qs-lbl { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); }
   .qs-icon { position:absolute; right:12px; top:50%; transform:translateY(-50%); font-size:22px; opacity:.2; }
 
   /* ── WEEK CHART CARD ── */
@@ -794,12 +794,12 @@
   .row-btn-icon.red    { background:var(--red-dim);     color:var(--red);    }
   .row-btn-icon.purple { background:var(--purple-dim);  color:var(--purple); }
   .row-btn-body { flex:1; min-width:0; text-align:left; }
-  .row-btn-sub  { font-size:11px; color:var(--muted); margin-top:2px; }
+  .row-btn-sub  { font-size:12px; color:var(--muted); margin-top:2px; }
   .row-btn-arrow { font-size:14px; color:var(--muted); }
   /* card-inset row-btns: no individual card styling, divider only */
   .card .row-btn { background:transparent; border:none; border-radius:0; border-bottom:1px solid var(--border); margin-bottom:0; padding:12px 16px; }
   .card .row-btn:last-child { border-bottom:none; }
-  .row-btn-body > div:first-child { font-size:13px; font-weight:500; }
+  .row-btn-body > div:first-child { font-size:14px; font-weight:500; }
 
   /* ── PILL EXTRAS ── */
   .pill-purple { background:var(--purple-dim); color:var(--purple); }
@@ -1198,7 +1198,7 @@
 
       <!-- Grand total pill -->
       <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:12px;background:linear-gradient(135deg,rgba(99,102,241,.1),rgba(99,102,241,.05));border:1px solid rgba(99,102,241,.2);border-radius:var(--radius);padding:10px 16px;">
-        <span style="font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:rgba(99,102,241,.6);">Grand Total</span>
+        <span style="font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:rgba(99,102,241,.6);">Grand Total</span>
         <span style="font-family:var(--mono);font-size:20px;font-weight:700;letter-spacing:-.4px;background-image:linear-gradient(135deg,#6366F1,#818CF8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;" id="tallyGrandTotal">₱0</span>
       </div>
 
@@ -1213,7 +1213,7 @@
           <tbody id="tallyDenomBody"></tbody>
           <tfoot>
             <tr class="tally-total-row">
-              <td colspan="2">Total Cash</td>
+              <td colspan="2">Total</td>
               <td id="tallyCOHTotal" class="tally-total-val" style="text-align:right;">₱0</td>
               <td></td>
             </tr>
@@ -1224,7 +1224,7 @@
       <!-- GCash entries -->
       <div class="card" style="padding:0;margin-bottom:12px;overflow:hidden;">
         <div class="card-hdr">
-          <div class="card-hdr-title">GCash Entries</div>
+          <div class="card-hdr-title">GCash|Maya</div>
           <button id="tallyAddGCashBtn" class="chart-mode-btn" onclick="addGCashRow()"><i class="ti ti-plus"></i> Add</button>
         </div>
         <table class="tally-table" id="tallyGCashTable">
@@ -1232,7 +1232,7 @@
           <tbody id="tallyGCashBody"></tbody>
           <tfoot>
             <tr class="tally-total-row">
-              <td>Total GCash Balance</td>
+              <td>Total</td>
               <td id="tallyGCashTotal" class="tally-total-val" style="text-align:right;">₱0</td>
               <td colspan="2"></td>
             </tr>
@@ -1905,7 +1905,7 @@ function renderLineChart(groups) {
       ctx.fill();
 
       // Value label above bar
-      ctx.font      = (isLatest || isHl) ? 'bold 8px system-ui' : '8px system-ui';
+      ctx.font      = (isLatest || isHl) ? 'bold 10px system-ui' : '10px system-ui';
       ctx.textAlign = 'center';
       ctx.fillStyle = (isLatest || isHl) ? '#2DD4BF' : 'rgba(99,102,241,.9)';
       { const lblX = x + barW / 2; const lblY = y - 4; ctx.fillText(fmt(v), lblX, lblY); }
@@ -1913,7 +1913,7 @@ function renderLineChart(groups) {
       // Period label below
       const short = labels[i] ? (rptPeriod === 'week'  ? labels[i].split(' ')[0] + '\n' + labels[i].split(' ')[1] :
                                   rptPeriod === 'month' ? labels[i].split(' ')[0] : labels[i]) : '';
-      ctx.font      = (isLatest || isHl) ? 'bold 9px system-ui' : '9px system-ui';
+      ctx.font      = (isLatest || isHl) ? 'bold 11px system-ui' : '11px system-ui';
       ctx.textAlign = 'center';
       ctx.fillStyle = (isLatest || isHl) ? '#2DD4BF' : '#7A94B0';
       ctx.fillText(short.split('\n')[0], x + barW / 2, H - 4);
@@ -3194,13 +3194,13 @@ function renderHomeChart() {
       ctx.fill();
 
       // Earn label above bar
-      ctx.font = isToday ? 'bold 8px system-ui' : '8px system-ui';
+      ctx.font = isToday ? 'bold 10px system-ui' : '10px system-ui';
       ctx.textAlign = 'center';
       ctx.fillStyle = isToday ? '#2DD4BF' : 'rgba(99,102,241,0.9)';
       ctx.fillText(fmt(v), x + barW / 2, y - 4);
 
       // Day label below
-      ctx.font = isToday ? 'bold 9px system-ui' : '9px system-ui';
+      ctx.font = isToday ? 'bold 11px system-ui' : '11px system-ui';
       ctx.textAlign = 'center';
       ctx.fillStyle = isToday ? '#2DD4BF' : '#7A94B0';
       ctx.fillText(labels[i], x + barW / 2, H - 4);
@@ -3237,7 +3237,7 @@ function renderHomeChart() {
       ctx.fill();
       if (v > 0) {
         const lbl = fmt(v);
-        ctx.font = isToday ? 'bold 9px system-ui' : '9px system-ui';
+        ctx.font = isToday ? 'bold 11px system-ui' : '11px system-ui';
         ctx.textAlign = 'center';
         const tw = ctx.measureText(lbl).width + 6;
         const lblY = y - 7 > PAD.t + 4 ? y - 7 : y + 14;
@@ -3256,7 +3256,7 @@ function renderHomeChart() {
     labels.forEach((l, i) => {
       const isToday = i === n - 1;
       ctx.fillStyle = isToday ? '#2DD4BF' : '#7A94B0';
-      ctx.font = isToday ? 'bold 9px system-ui' : '9px system-ui';
+      ctx.font = isToday ? 'bold 11px system-ui' : '11px system-ui';
       ctx.fillText(l, xP(i), H - 4);
     });
   }
