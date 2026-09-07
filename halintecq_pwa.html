@@ -1081,7 +1081,7 @@
         <div id="sbLoggedIn" style="display:none;">
           <div class="fb-status-row" style="padding:10px 16px 0;"><span id="sbDotInline" class="fb-dot connected"></span><span id="sbStatusMsg" style="font-size:12px;color:var(--muted);">Connected</span></div>
           <div style="font-size:12px;color:var(--muted);padding:4px 16px 10px;">Logged in as <strong id="sbUserEmail" style="color:var(--text);"></strong></div>
-          <div id="cloudSyncMeta" style="display:none;background:var(--surface2);padding:6px 16px;font-size:12px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:4px;"></div>
+          <div id="cloudSyncMeta" style="background:var(--surface2);padding:6px 16px;font-size:12px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:4px;"></div>
           <button class="row-btn" onclick="sbPushAll(false)">
             <div class="row-btn-icon indigo"><i class="ti ti-cloud-upload"></i></div>
             <div class="row-btn-body"><div>Sync to Cloud</div><div class="row-btn-sub">Push latest data to backup</div></div>
@@ -3927,6 +3927,7 @@ function renderSbCard() {
     setSbStatus('connected', 'Connected');
     const emailEl = document.getElementById('sbUserEmail');
     if (emailEl) emailEl.textContent = _sbUser.email;
+    renderCloudSyncMeta();
   } else {
     form.style.display = ''; loggedIn.style.display = 'none';
     setSbStatus(_sbClient ? '' : 'error');
