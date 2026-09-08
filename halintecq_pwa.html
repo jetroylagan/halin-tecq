@@ -74,20 +74,20 @@
     --shadow-tabs:0 -4px 24px rgba(0,0,0,.5);
   }
   [data-theme="ice"] {
-    --bg:#EDF6FF; --surface:#DCF0FE; --surface2:#CCE6FC; --surface3:#BDD8F8; --surface4:#AACCE8;
-    --s1:#DCF0FE; --s2:#CCE6FC; --s3:#BDD8F8; --s4:#AACCE8;
-    --border:rgba(0,60,120,.10); --border2:rgba(0,60,120,.18);
-    --text:#0A1628; --text2:#1E3A5C; --muted:#6080A0;
-    --glass-header:rgba(237,246,255,.96); --glass-tabs:rgba(237,246,255,.98); --glass-sticky:rgba(237,246,255,.94);
-    --shadow-tabs:0 -4px 24px rgba(0,60,120,.12);
+    --bg:#EFF1F5; --surface:#E4E7EE; --surface2:#D8DCE6; --surface3:#CDD2DE; --surface4:#C2C8D6;
+    --s1:#E4E7EE; --s2:#D8DCE6; --s3:#CDD2DE; --s4:#C2C8D6;
+    --border:rgba(62,69,96,.10); --border2:rgba(62,69,96,.18);
+    --text:#0E1018; --text2:#3E4560; --muted:#6A7290;
+    --glass-header:rgba(239,241,245,.96); --glass-tabs:rgba(239,241,245,.98); --glass-sticky:rgba(239,241,245,.94);
+    --shadow-tabs:0 -4px 24px rgba(62,69,96,.12);
   }
-  /* Ice light-mode overrides for hardcoded dark values */
-  [data-theme="ice"] .pod.coh { background:linear-gradient(135deg,#FEF5DC 0%,#FCEDC4 100%); border-color:rgba(245,158,11,.45); }
-  [data-theme="ice"] .pod.coh::before { background:radial-gradient(circle at 85% 15%,rgba(245,158,11,.38) 0%,transparent 62%); }
-  [data-theme="ice"] .pod.cog { background:linear-gradient(135deg,#D4F8F4 0%,#C0F2EC 100%); border-color:rgba(45,212,191,.42); }
-  [data-theme="ice"] .pod.cog::before { background:radial-gradient(circle at 85% 15%,rgba(45,212,191,.32) 0%,transparent 62%); }
-  [data-theme="ice"] .pod.grand { background:linear-gradient(135deg,#D4F4E0 0%,#C0EED0 100%); border-color:rgba(74,222,128,.40); }
-  [data-theme="ice"] .pod.grand::before { background:radial-gradient(circle at 85% 15%,rgba(74,222,128,.28) 0%,transparent 62%); }
+  /* Fog light-mode overrides for hardcoded dark values */
+  [data-theme="ice"] .pod.coh { background:linear-gradient(135deg,#FDF0D0 0%,#FAE6B0 100%); border-color:rgba(245,158,11,.45); }
+  [data-theme="ice"] .pod.coh::before { background:radial-gradient(circle at 85% 15%,rgba(245,158,11,.35) 0%,transparent 62%); }
+  [data-theme="ice"] .pod.cog { background:linear-gradient(135deg,#CCF0EB 0%,#B8EAE4 100%); border-color:rgba(45,212,191,.42); }
+  [data-theme="ice"] .pod.cog::before { background:radial-gradient(circle at 85% 15%,rgba(45,212,191,.30) 0%,transparent 62%); }
+  [data-theme="ice"] .pod.grand { background:linear-gradient(135deg,#CCF0DC 0%,#B8E8CC 100%); border-color:rgba(74,222,128,.40); }
+  [data-theme="ice"] .pod.grand::before { background:radial-gradient(circle at 85% 15%,rgba(74,222,128,.25) 0%,transparent 62%); }
   [data-theme="ice"] .pod.coh .pod-label { color:#D97706; }
   [data-theme="ice"] .pod.cog .pod-label { color:#0D9488; }
   [data-theme="ice"] .bh-pod.coh .bh-pod-label { color:rgba(180,83,9,.85); }
@@ -99,15 +99,15 @@
   [data-theme="ice"] .pod.grand .pod-amount { background-image:linear-gradient(135deg,#16A34A 0%,#15803D 60%,#16A34A 100%); }
   [data-theme="ice"] .pod.coh .pod-sub { color:rgba(180,100,0,.70); }
   [data-theme="ice"] .pod.cog .pod-sub { color:rgba(13,148,136,.75); }
-  [data-theme="ice"] .deficit-item { background:rgba(0,60,120,.06); border-color:rgba(0,60,120,.12); }
-  [data-theme="ice"] .qe-card { background:rgba(220,240,254,.92); }
+  [data-theme="ice"] .deficit-item { background:rgba(62,69,96,.06); border-color:rgba(62,69,96,.12); }
+  [data-theme="ice"] .qe-card { background:rgba(228,231,238,.92); }
   [data-theme="ice"] .tally-mini-pod.coh { background:linear-gradient(135deg,#F5EDCC,#EEE4B8); border-color:rgba(245,158,11,.35); }
   [data-theme="ice"] .tally-mini-pod.cog { background:linear-gradient(135deg,#C8E8E4,#BAE0DC); border-color:rgba(45,212,191,.35); }
-  [data-theme="ice"] #app::before { background:radial-gradient(ellipse 70% 45% at 15% 0%,rgba(99,130,241,.10) 0%,transparent 65%),radial-gradient(ellipse 55% 40% at 85% 100%,rgba(45,212,191,.07) 0%,transparent 60%); }
+  [data-theme="ice"] #app::before { background:radial-gradient(ellipse 70% 45% at 15% 0%,rgba(99,102,241,.08) 0%,transparent 65%),radial-gradient(ellipse 55% 40% at 85% 100%,rgba(45,212,191,.06) 0%,transparent 60%); }
   [data-theme="ice"] .hdr-name { background:linear-gradient(135deg,#312E81 0%,#4F46E5 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-  [data-theme="ice"] .hdr-date { color:#1E3A5C; }
+  [data-theme="ice"] .hdr-date { color:#3E4560; }
   [data-theme="ice"] input[type=date]::-webkit-calendar-picker-indicator { filter:none; opacity:.5; }
-  [data-theme="ice"] .modal-bg { background:rgba(10,22,40,.55); }
+  [data-theme="ice"] .modal-bg { background:rgba(14,16,24,.55); }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
   html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--font); font-size: 15px; overscroll-behavior: none; font-variant-numeric: tabular-nums; -webkit-font-smoothing: antialiased; }
@@ -907,12 +907,12 @@
           <div class="qs-card in">
             <div class="qs-val green" id="hsTodayIn">₱0</div>
             <div class="qs-lbl">Cash-In · Load</div>
-            <i class="ti ti-circle-arrow-down-filled qs-icon" style="color:var(--green);"></i>
+            <i class="ti ti-arrow-badge-down-filled qs-icon" style="color:var(--green);"></i>
           </div>
           <div class="qs-card out">
             <div class="qs-val red" id="hsTodayOut">₱0</div>
             <div class="qs-lbl">Cash-Out</div>
-            <i class="ti ti-circle-arrow-up-filled qs-icon" style="color:var(--red);"></i>
+            <i class="ti ti-arrow-badge-up-filled qs-icon" style="color:var(--red);"></i>
           </div>
         </div>
         <!-- hidden canvases for JS compat -->
@@ -988,8 +988,8 @@
         </div>
         <div class="filter-bar" id="logFilterBar" style="margin-bottom:10px;">
           <div class="filter-chip active"  onclick="filterHistory('all', this)"><i class="ti ti-apps"></i>All</div>
-          <div class="filter-chip green"   onclick="filterHistory('Cash-In', this)"><i class="ti ti-circle-arrow-down-filled"></i>Cash-In</div>
-          <div class="filter-chip red"     onclick="filterHistory('Cash-Out', this)"><i class="ti ti-circle-arrow-up-filled"></i>Cash-Out</div>
+          <div class="filter-chip green"   onclick="filterHistory('Cash-In', this)"><i class="ti ti-arrow-badge-down-filled"></i>Cash-In</div>
+          <div class="filter-chip red"     onclick="filterHistory('Cash-Out', this)"><i class="ti ti-arrow-badge-up-filled"></i>Cash-Out</div>
           <div class="filter-chip indigo"  onclick="filterHistory('Load', this)"><i class="ti ti-device-mobile-filled"></i>Load</div>
           <div class="filter-chip teal"    onclick="filterHistory('Rollover', this)"><i class="ti ti-arrows-exchange"></i>Rollover</div>
         </div>
@@ -1305,8 +1305,8 @@
     <div class="modal-title">Edit Transaction <button class="modal-close" aria-label="Close" onclick="closeModal('editModal')">×</button></div>
     <div class="field"><label>Type</label>
       <div class="chips" id="eTypeChips">
-        <div class="chip green selected" data-type="Cash-In"           onclick="selectTypeChip('eTypeChips',this)"><i class="ti ti-circle-arrow-down-filled"></i>Cash-In</div>
-        <div class="chip red"            data-type="Cash-Out"          onclick="selectTypeChip('eTypeChips',this)"><i class="ti ti-circle-arrow-up-filled"></i>Cash-Out</div>
+        <div class="chip green selected" data-type="Cash-In"           onclick="selectTypeChip('eTypeChips',this)"><i class="ti ti-arrow-badge-down-filled"></i>Cash-In</div>
+        <div class="chip red"            data-type="Cash-Out"          onclick="selectTypeChip('eTypeChips',this)"><i class="ti ti-arrow-badge-up-filled"></i>Cash-Out</div>
         <div class="chip indigo"         data-type="Load"              onclick="selectTypeChip('eTypeChips',this)"><i class="ti ti-device-mobile-filled"></i>Load</div>
         <div class="chip teal"           data-type="Cash-In-Rollover"  onclick="selectTypeChip('eTypeChips',this)"><i class="ti ti-arrows-exchange"></i>In-Roll</div>
         <div class="chip amber"          data-type="Cash-Out-Rollover" onclick="selectTypeChip('eTypeChips',this)"><i class="ti ti-arrows-exchange-2"></i>Out-Roll</div>
@@ -1336,8 +1336,8 @@
     <div class="modal-title">New Transaction <button class="modal-close" aria-label="Close" onclick="closeModal('addModal')">×</button></div>
     <div class="field"><label>Type</label>
       <div class="chips" id="mTypeChips">
-        <div class="chip green selected" data-type="Cash-In"           onclick="selectTypeChip('mTypeChips',this)"><i class="ti ti-circle-arrow-down-filled"></i>Cash-In</div>
-        <div class="chip red"            data-type="Cash-Out"          onclick="selectTypeChip('mTypeChips',this)"><i class="ti ti-circle-arrow-up-filled"></i>Cash-Out</div>
+        <div class="chip green selected" data-type="Cash-In"           onclick="selectTypeChip('mTypeChips',this)"><i class="ti ti-arrow-badge-down-filled"></i>Cash-In</div>
+        <div class="chip red"            data-type="Cash-Out"          onclick="selectTypeChip('mTypeChips',this)"><i class="ti ti-arrow-badge-up-filled"></i>Cash-Out</div>
         <div class="chip indigo"         data-type="Load"              onclick="selectTypeChip('mTypeChips',this)"><i class="ti ti-device-mobile-filled"></i>Load</div>
         <div class="chip teal"           data-type="Cash-In-Rollover"  onclick="selectTypeChip('mTypeChips',this)"><i class="ti ti-arrows-exchange"></i>In-Roll</div>
         <div class="chip amber"          data-type="Cash-Out-Rollover" onclick="selectTypeChip('mTypeChips',this)"><i class="ti ti-arrows-exchange-2"></i>Out-Roll</div>
@@ -1599,8 +1599,8 @@ function txnHTML(t, showActions = false, editOnly = false) {
   const isOutRoll = t.type === 'Cash-Out-Rollover';
   const iconClass = isLoad ? 'load' : isInRoll ? 'roll' : isOutRoll ? 'oroll' : isCashOut ? 'out' : 'in';
   const iconMap = {
-    'Cash-In':          '<i class="ti ti-circle-arrow-down-filled" aria-hidden="true"></i>',
-    'Cash-Out':         '<i class="ti ti-circle-arrow-up-filled" aria-hidden="true"></i>',
+    'Cash-In':          '<i class="ti ti-arrow-badge-down-filled" aria-hidden="true"></i>',
+    'Cash-Out':         '<i class="ti ti-arrow-badge-up-filled" aria-hidden="true"></i>',
     'Load':             '<i class="ti ti-device-mobile-filled" aria-hidden="true"></i>',
     'Cash-In-Rollover': '<i class="ti ti-arrows-exchange" aria-hidden="true"></i>',
     'Cash-Out-Rollover':'<i class="ti ti-arrows-exchange-2" aria-hidden="true"></i>',
