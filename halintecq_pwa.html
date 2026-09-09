@@ -811,6 +811,73 @@
 
   @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
 
+  /* ── REPORTS / INSIGHTS PILL TOGGLE ── */
+  .rpt-pill-toggle { display:flex; background:var(--s2); border:1px solid var(--border2); border-radius:14px; padding:3px; gap:3px; margin-bottom:14px; }
+  .rpt-pill-btn { flex:1; display:flex; align-items:center; justify-content:center; gap:6px; padding:9px 0; border-radius:10px; border:none; font-family:var(--font); font-size:12px; font-weight:700; cursor:pointer; color:var(--muted); background:transparent; transition:all .2s; }
+  .rpt-pill-btn i { font-size:15px; }
+  .rpt-pill-btn.active-rpt { color:var(--teal);   background:var(--teal-dim); }
+  .rpt-pill-btn.active-ins { color:var(--purple); background:var(--purple-dim); }
+
+  /* ── INSIGHT CARDS ── */
+  .ins-section-title { font-size:9px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-bottom:8px; }
+
+  .ins-card { background:linear-gradient(135deg,var(--s1),var(--s2)); border:1px solid var(--border2); border-radius:var(--radius); padding:14px 16px; margin-bottom:10px; position:relative; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,.3); }
+  .ins-card::before { content:''; position:absolute; top:-20px; right:-20px; width:90px; height:90px; border-radius:50%; pointer-events:none; }
+  .ins-card.indigo::before { background:radial-gradient(circle,rgba(99,102,241,.12) 0%,transparent 70%); }
+  .ins-card.amber::before  { background:radial-gradient(circle,rgba(245,158,11,.12) 0%,transparent 70%); }
+  .ins-card.teal::before   { background:radial-gradient(circle,rgba(45,212,191,.12) 0%,transparent 70%); }
+  .ins-card.red::before    { background:radial-gradient(circle,rgba(248,113,113,.12) 0%,transparent 70%); }
+  .ins-card.purple::before { background:radial-gradient(circle,rgba(167,139,250,.12) 0%,transparent 70%); }
+
+  /* Projection */
+  .ins-proj-top   { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:10px; }
+  .ins-proj-lbl   { font-size:9px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-bottom:4px; }
+  .ins-proj-val   { font-family:var(--mono); font-size:22px; font-weight:800; letter-spacing:-.5px; background:linear-gradient(135deg,#818CF8,#C4B5FD); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .ins-proj-sub   { font-size:10px; color:var(--muted); margin-top:3px; }
+  .ins-days-pill  { background:var(--s3); border:1px solid var(--border2); border-radius:20px; padding:4px 10px; font-size:10px; font-weight:700; color:var(--text2); white-space:nowrap; flex-shrink:0; }
+  .ins-proj-bar-track { height:5px; background:var(--s4); border-radius:5px; overflow:hidden; }
+  .ins-proj-bar-fill  { height:100%; border-radius:5px; background:linear-gradient(90deg,#4F46E5,#818CF8); box-shadow:0 0 8px rgba(99,102,241,.4); transition:width .8s cubic-bezier(.34,1.2,.64,1); width:0; }
+
+  /* Streak */
+  .ins-streak-inner { display:flex; align-items:center; gap:14px; }
+  .streak-ring  { width:52px; height:52px; border-radius:50%; background:linear-gradient(135deg,rgba(245,158,11,.15),rgba(245,158,11,.05)); border:2px solid rgba(245,158,11,.3); display:flex; flex-direction:column; align-items:center; justify-content:center; flex-shrink:0; }
+  .streak-num   { font-family:var(--mono); font-size:18px; font-weight:800; color:var(--amber); line-height:1; }
+  .streak-days  { font-size:8px; font-weight:700; text-transform:uppercase; color:rgba(245,158,11,.6); letter-spacing:.08em; }
+  .streak-lbl   { font-size:9px; font-weight:800; text-transform:uppercase; letter-spacing:.14em; color:var(--muted); margin-bottom:3px; }
+  .streak-title { font-size:15px; font-weight:800; color:var(--amber); }
+  .streak-sub   { font-size:11px; color:var(--muted); margin-top:3px; }
+  .streak-dots  { display:flex; gap:4px; margin-top:8px; }
+  .streak-dot   { height:6px; border-radius:3px; background:rgba(245,158,11,.2); flex:1; }
+  .streak-dot.on { background:var(--amber); box-shadow:0 0 6px rgba(245,158,11,.5); }
+
+  /* Earn by type */
+  .type-row       { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .type-row:last-child { margin-bottom:0; }
+  .type-icon-sm   { width:26px; height:26px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:13px; flex-shrink:0; }
+  .type-name      { font-size:11px; font-weight:600; color:var(--text); width:62px; flex-shrink:0; }
+  .type-bar-track { flex:1; height:6px; background:var(--s4); border-radius:6px; overflow:hidden; }
+  .type-bar-fill  { height:100%; border-radius:6px; transition:width .8s cubic-bezier(.34,1.2,.64,1); width:0; }
+  .type-earn-val  { font-family:var(--mono); font-size:11px; font-weight:700; width:46px; text-align:right; flex-shrink:0; }
+  .type-pct-val   { font-size:10px; color:var(--muted); width:26px; text-align:right; flex-shrink:0; }
+
+  /* Mini 2-col cards */
+  .ins-mini-grid  { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:10px; }
+  .ins-mini-card  { background:linear-gradient(135deg,var(--s1),var(--s2)); border:1px solid var(--border2); border-radius:var(--radius-sm); padding:12px 14px; position:relative; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,.3); }
+  .ins-mini-lbl   { font-size:9px; font-weight:800; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); margin-bottom:5px; }
+  .ins-mini-val   { font-family:var(--mono); font-size:18px; font-weight:800; line-height:1; }
+  .ins-mini-delta { display:inline-flex; align-items:center; gap:3px; margin-top:5px; font-size:10px; font-weight:700; }
+
+  /* Utilization */
+  .util-top       { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:10px; }
+  .util-lbl       { font-size:9px; font-weight:800; text-transform:uppercase; letter-spacing:.14em; color:var(--muted); margin-bottom:4px; }
+  .util-val       { font-family:var(--mono); font-size:22px; font-weight:800; color:var(--amber); }
+  .util-warn-pill { display:inline-flex; align-items:center; gap:4px; border-radius:20px; padding:4px 10px; font-size:11px; font-weight:700; }
+  .util-warn-pill.high { background:rgba(248,113,113,.1); border:1px solid rgba(248,113,113,.25); color:var(--red); }
+  .util-warn-pill.ok   { background:var(--green-dim); border:1px solid rgba(52,211,153,.25); color:var(--green); }
+  .util-bar-track { height:8px; background:var(--s4); border-radius:8px; overflow:hidden; margin-bottom:8px; }
+  .util-bar-fill  { height:100%; border-radius:8px; transition:width .8s cubic-bezier(.34,1.2,.64,1); width:0; }
+  .util-sub       { font-size:10px; color:var(--muted); }
+
   /* ── MONTHLY EARNED CARD (Home) ── */
   .month-earned-card {
     background: linear-gradient(135deg, var(--s1) 0%, var(--s2) 100%);
@@ -1110,42 +1177,129 @@
 
     <!-- REPORTS VIEW -->
     <div class="view" id="view-reports">
-      <div class="rpt-period-bar">
-        <button class="rpt-period-btn active" id="rptBtn-week"  onclick="setReportPeriod('week',this)">Weekly</button>
-        <button class="rpt-period-btn"        id="rptBtn-month" onclick="setReportPeriod('month',this)">Monthly</button>
-        <button class="rpt-period-btn"        id="rptBtn-year"  onclick="setReportPeriod('year',this)">Yearly</button>
-      </div>
-      <div class="week-chart-card">
-        <div class="card-hdr">
-          <div class="card-hdr-title">Earnings Over Time</div>
-        </div>
-        <div id="rptChartWrap" style="padding:12px 14px 10px;overflow-x:auto;-webkit-overflow-scrolling:touch;">
-          <canvas id="rptChart" height="180" style="width:100%;display:block;"></canvas>
+
+      <!-- Reports / Insights pill toggle -->
+      <div style="padding:14px 14px 0;">
+        <div class="rpt-pill-toggle">
+          <button class="rpt-pill-btn active-rpt" id="rptPillReports"  onclick="switchReportsMode('reports')"><i class="ti ti-chart-bar"></i> Reports</button>
+          <button class="rpt-pill-btn"             id="rptPillInsights" onclick="switchReportsMode('insights')"><i class="ti ti-bulb"></i> Insights</button>
         </div>
       </div>
-      <div class="card" style="padding:0;overflow:clip;">
-        <div style="padding:10px 16px 8px;background:var(--surface2);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;">
-          <div id="rptTableTitle" style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">Weekly Breakdown</div>
-          <div id="rptTableCount" style="font-size:10px;color:var(--muted);"></div>
+
+      <!-- ── REPORTS PANEL (existing) ── -->
+      <div id="rptReportsPanel" style="padding:0 14px 14px;">
+        <div class="rpt-period-bar">
+          <button class="rpt-period-btn active" id="rptBtn-week"  onclick="setReportPeriod('week',this)">Weekly</button>
+          <button class="rpt-period-btn"        id="rptBtn-month" onclick="setReportPeriod('month',this)">Monthly</button>
+          <button class="rpt-period-btn"        id="rptBtn-year"  onclick="setReportPeriod('year',this)">Yearly</button>
         </div>
-        <div id="rptTable" style="overflow-x:auto;-webkit-overflow-scrolling:touch;"></div>
+        <div class="week-chart-card">
+          <div class="card-hdr">
+            <div class="card-hdr-title">Earnings Over Time</div>
+          </div>
+          <div id="rptChartWrap" style="padding:12px 14px 10px;overflow-x:auto;-webkit-overflow-scrolling:touch;">
+            <canvas id="rptChart" height="180" style="width:100%;display:block;"></canvas>
+          </div>
+        </div>
+        <div class="card" style="padding:0;overflow:clip;">
+          <div style="padding:10px 16px 8px;background:var(--surface2);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;">
+            <div id="rptTableTitle" style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">Weekly Breakdown</div>
+            <div id="rptTableCount" style="font-size:10px;color:var(--muted);"></div>
+          </div>
+          <div id="rptTable" style="overflow-x:auto;-webkit-overflow-scrolling:touch;"></div>
+        </div>
+        <div class="card" style="padding:0;overflow:hidden;margin-top:12px;">
+          <div style="padding:10px 16px 8px;background:var(--surface2);border-bottom:1px solid var(--border);">
+            <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">All-Time Summary</div>
+          </div>
+          <div class="stat-grid" style="padding:12px;margin:0;">
+            <div class="stat-box"><div class="stat-val green" id="rTotalIn">₱0</div><div class="stat-lbl">Total Cash-In</div></div>
+            <div class="stat-box"><div class="stat-val red"   id="rTotalOut">₱0</div><div class="stat-lbl">Total Cash-Out</div></div>
+            <div class="stat-box"><div class="stat-val blue"  id="rTotalLoad">₱0</div><div class="stat-lbl">Total Load</div></div>
+            <div class="stat-box"><div class="stat-val amber" id="rTotalEarned">₱0</div><div class="stat-lbl">Total Earned</div></div>
+            <div class="stat-box"><div class="stat-val blue"  id="rTxnCount">0</div><div class="stat-lbl">Transactions</div></div>
+            <div class="stat-box"><div class="stat-val"       id="rCapital">₱0</div><div class="stat-lbl">Base Capital</div></div>
+            <div id="rEarnCOH" style="display:none"></div>
+            <div id="rEarnCOG" style="display:none"></div>
+          </div>
+        </div>
       </div>
-      <div class="card" style="padding:0;overflow:hidden;margin-top:12px;">
-        <div style="padding:10px 16px 8px;background:var(--surface2);border-bottom:1px solid var(--border);">
-          <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">All-Time Summary</div>
+
+      <!-- ── INSIGHTS PANEL (new) ── -->
+      <div id="rptInsightsPanel" style="display:none;padding:0 14px 14px;">
+
+        <!-- 1. Month Projection -->
+        <div class="ins-section-title">Earnings Forecast</div>
+        <div class="ins-card indigo">
+          <div class="ins-proj-top">
+            <div>
+              <div class="ins-proj-lbl">Month Projection</div>
+              <div class="ins-proj-val" id="insProjectedVal">₱0</div>
+              <div class="ins-proj-sub" id="insProjectedSub">—</div>
+            </div>
+            <div class="ins-days-pill" id="insDaysLeft">— days left</div>
+          </div>
+          <div class="ins-proj-bar-track">
+            <div class="ins-proj-bar-fill" id="insProjectedBar"></div>
+          </div>
         </div>
-        <div class="stat-grid" style="padding:12px;margin:0;">
-          <div class="stat-box"><div class="stat-val green" id="rTotalIn">₱0</div><div class="stat-lbl">Total Cash-In</div></div>
-          <div class="stat-box"><div class="stat-val red"   id="rTotalOut">₱0</div><div class="stat-lbl">Total Cash-Out</div></div>
-          <div class="stat-box"><div class="stat-val blue"  id="rTotalLoad">₱0</div><div class="stat-lbl">Total Load</div></div>
-          <div class="stat-box"><div class="stat-val amber" id="rTotalEarned">₱0</div><div class="stat-lbl">Total Earned</div></div>
-          <div class="stat-box"><div class="stat-val blue" id="rTxnCount">0</div><div class="stat-lbl">Transactions</div></div>
-          <div class="stat-box"><div class="stat-val" id="rCapital">₱0</div><div class="stat-lbl">Base Capital</div></div>
-          <div id="rEarnCOH" style="display:none"></div>
-          <div id="rEarnCOG" style="display:none"></div>
+
+        <!-- 2. Earning Streak -->
+        <div class="ins-section-title">Consistency</div>
+        <div class="ins-card amber">
+          <div class="ins-streak-inner">
+            <div class="streak-ring">
+              <div class="streak-num" id="insStreakNum">0</div>
+              <div class="streak-days">days</div>
+            </div>
+            <div style="flex:1;">
+              <div class="streak-lbl">Earning Streak</div>
+              <div class="streak-title" id="insStreakTitle">—</div>
+              <div class="streak-sub"   id="insStreakSub">—</div>
+              <div class="streak-dots"  id="insStreakDots"></div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+
+        <!-- 3. Earn by Type -->
+        <div class="ins-section-title">Earn by Transaction Type · This Month</div>
+        <div class="ins-card purple">
+          <div id="insTypeRows"></div>
+        </div>
+
+        <!-- 4. Avg earn/txn + Peak hour -->
+        <div class="ins-section-title">Per-Transaction Quality</div>
+        <div class="ins-mini-grid">
+          <div class="ins-mini-card">
+            <div class="ins-mini-lbl">Avg Earn / Txn</div>
+            <div class="ins-mini-val" id="insAvgEarnVal" style="color:var(--purple);">₱0</div>
+            <div class="ins-mini-delta" id="insAvgEarnDelta" style="color:var(--muted);">—</div>
+          </div>
+          <div class="ins-mini-card">
+            <div class="ins-mini-lbl">Peak Hour</div>
+            <div class="ins-mini-val" id="insPeakHour" style="color:var(--teal);font-size:16px;">—</div>
+            <div class="ins-mini-delta" id="insPeakSub" style="color:var(--muted);">—</div>
+          </div>
+        </div>
+
+        <!-- 5. Cash Utilization -->
+        <div class="ins-section-title">Cash Utilization · Today</div>
+        <div class="ins-card red">
+          <div class="util-top">
+            <div>
+              <div class="util-lbl">COH Deployed</div>
+              <div class="util-val" id="insUtilPct">0%</div>
+            </div>
+            <div class="util-warn-pill" id="insUtilWarn"></div>
+          </div>
+          <div class="util-bar-track">
+            <div class="util-bar-fill" id="insUtilBar"></div>
+          </div>
+          <div class="util-sub" id="insUtilSub">—</div>
+        </div>
+
+      </div><!-- /rptInsightsPanel -->
+    </div><!-- /view-reports -->
 
     <!-- SETTINGS VIEW -->
     <div class="view" id="view-settings">
@@ -1362,7 +1516,7 @@
     <div class="nav-inner">
       <button type="button" class="tab active" onclick="switchTab('home')"     id="tab-home"><span class="tab-icon"><i class="ti ti-home" aria-hidden="true"></i></span>Home</button>
       <button type="button" class="tab"        onclick="switchTab('log')"      id="tab-log"><span class="tab-icon"><i class="ti ti-list-details" aria-hidden="true"></i></span>Logs</button>
-      <button type="button" class="tab"        onclick="switchTab('reports')"  id="tab-reports"><span class="tab-icon"><i class="ti ti-chart-bar" aria-hidden="true"></i></span>Reports</button>
+      <button type="button" class="tab"        onclick="switchTab('reports')"  id="tab-reports"><span class="tab-icon"><i class="ti ti-bulb" aria-hidden="true"></i></span>Insights</button>
       <button type="button" class="tab"        onclick="switchTab('tally')"    id="tab-tally"><span class="tab-icon"><i class="ti ti-calculator" aria-hidden="true"></i></span>Tally</button>
       <button type="button" class="tab"        onclick="switchTab('settings')" id="tab-settings"><span class="tab-icon"><i class="ti ti-settings" aria-hidden="true"></i></span>More</button>
     </div>
@@ -1881,6 +2035,190 @@ function setReportPeriod(p, el) {
   el.classList.add('active');
   const bal = calcBalances();
   renderReports(bal);
+}
+
+// ── REPORTS / INSIGHTS TOGGLE ───────────────────────────────────────────────
+let _reportsMode = 'reports';
+
+function switchReportsMode(mode) {
+  _reportsMode = mode;
+  const reportsPanel  = document.getElementById('rptReportsPanel');
+  const insightsPanel = document.getElementById('rptInsightsPanel');
+  const pillRpt = document.getElementById('rptPillReports');
+  const pillIns = document.getElementById('rptPillInsights');
+
+  if (mode === 'reports') {
+    reportsPanel.style.display  = 'block';
+    insightsPanel.style.display = 'none';
+    pillRpt.className = 'rpt-pill-btn active-rpt';
+    pillIns.className = 'rpt-pill-btn';
+    const bal = calcBalances();
+    renderReports(bal);
+  } else {
+    reportsPanel.style.display  = 'none';
+    insightsPanel.style.display = 'block';
+    pillRpt.className = 'rpt-pill-btn';
+    pillIns.className = 'rpt-pill-btn active-ins';
+    renderInsights();
+  }
+}
+
+function renderInsights() {
+  const now   = new Date();
+  const yyyy  = now.getFullYear();
+  const mm    = now.getMonth();
+  const today = now.toDateString();
+
+  const isThisMonth = t => { const d = new Date(t.ts); return d.getFullYear() === yyyy && d.getMonth() === mm; };
+  const isLastMonth = t => {
+    const d = new Date(t.ts);
+    const lm = mm === 0 ? 11 : mm - 1;
+    const ly = mm === 0 ? yyyy - 1 : yyyy;
+    return d.getFullYear() === ly && d.getMonth() === lm;
+  };
+  const isToday = t => new Date(t.ts).toDateString() === today;
+
+  const thisTxns = state.transactions.filter(isThisMonth);
+  const lastTxns = state.transactions.filter(isLastMonth);
+  const todayTxns = state.transactions.filter(isToday);
+
+  // ── 1. Month Projection ──────────────────────────────────────────
+  const thisEarn   = thisTxns.reduce((s,t) => s + (parseFloat(t.earn)||0), 0);
+  const daysSoFar  = Math.max(1, now.getDate());
+  const daysInMonth = new Date(yyyy, mm + 1, 0).getDate();
+  const daysLeft   = daysInMonth - now.getDate();
+  const dailyAvg   = thisEarn / daysSoFar;
+  const projected  = dailyAvg * daysInMonth;
+  const barPct     = Math.min(100, (thisEarn / Math.max(projected, 1)) * 100);
+  const monthName  = now.toLocaleDateString('en-PH', { month: 'long', year: 'numeric' });
+
+  const set = (id, v) => { const e = document.getElementById(id); if (e) e.textContent = v; };
+  set('insProjectedVal', fmt(Math.round(projected)));
+  set('insProjectedSub', monthName + ' · based on ' + fmt(Math.round(dailyAvg)) + '/day avg');
+  set('insDaysLeft',     daysLeft + ' day' + (daysLeft !== 1 ? 's' : '') + ' left');
+  setTimeout(() => {
+    const bar = document.getElementById('insProjectedBar');
+    if (bar) bar.style.width = barPct + '%';
+  }, 60);
+
+  // ── 2. Earning Streak ────────────────────────────────────────────
+  let streak = 0;
+  for (let i = 0; i < 90; i++) {
+    const d = new Date(); d.setDate(d.getDate() - i);
+    const ds = d.toDateString();
+    const dayEarn = state.transactions
+      .filter(t => new Date(t.ts).toDateString() === ds)
+      .reduce((s,t) => s + (parseFloat(t.earn)||0), 0);
+    if (dayEarn > 0) streak++;
+    else if (i > 0) break;
+  }
+  set('insStreakNum', streak);
+  const streakMsg   = streak >= 7 ? '🔥 On a roll!' : streak >= 3 ? '💪 Building momentum' : streak === 1 ? '✅ Good start!' : '— No streak yet';
+  const streakSub   = streak > 0 ? 'Earned for ' + streak + ' consecutive day' + (streak !== 1 ? 's' : '') : 'Earn today to start a streak';
+  set('insStreakTitle', streakMsg);
+  set('insStreakSub',   streakSub);
+  const dotsEl = document.getElementById('insStreakDots');
+  if (dotsEl) {
+    const dotDays = Math.min(streak, 14);
+    dotsEl.innerHTML = Array.from({length: Math.min(14, Math.max(streak, 7))}, (_,i) =>
+      `<div class="streak-dot${i < streak ? ' on' : ''}"></div>`
+    ).join('');
+  }
+
+  // ── 3. Earn by Type ──────────────────────────────────────────────
+  const typeColors = {
+    'Cash-In':           { bg:'var(--green-dim)',   color:'var(--green)',  icon:'ti-arrow-badge-down-filled' },
+    'Load':              { bg:'var(--indigo-dim)',   color:'var(--blue)',   icon:'ti-device-mobile-filled' },
+    'Cash-In-Rollover':  { bg:'var(--purple-dim)',   color:'var(--purple)', icon:'ti-arrows-exchange' },
+    'Cash-Out-Rollover': { bg:'rgba(248,113,113,.1)',color:'var(--red)',    icon:'ti-arrows-exchange' },
+    'Cash-Out':          { bg:'rgba(248,113,113,.1)',color:'var(--red)',    icon:'ti-arrow-badge-up-filled' },
+  };
+  const typeEarns = {};
+  thisTxns.forEach(t => { typeEarns[t.type] = (typeEarns[t.type]||0) + (parseFloat(t.earn)||0); });
+  const totalTypeEarn = Object.values(typeEarns).reduce((s,v) => s+v, 0);
+  const sortedTypes = Object.entries(typeEarns).sort((a,b) => b[1]-a[1]);
+  const maxTypeEarn = sortedTypes.length ? sortedTypes[0][1] : 1;
+  const typeRowsEl = document.getElementById('insTypeRows');
+  if (typeRowsEl) {
+    if (!sortedTypes.length) {
+      typeRowsEl.innerHTML = '<div style="font-size:12px;color:var(--muted);text-align:center;padding:8px 0;">No transactions this month yet</div>';
+    } else {
+      typeRowsEl.innerHTML = sortedTypes.map(([type, earn]) => {
+        const c = typeColors[type] || { bg:'var(--indigo-dim)', color:'var(--blue)', icon:'ti-currency-peso' };
+        const barW = maxTypeEarn > 0 ? Math.round((earn / maxTypeEarn) * 100) : 0;
+        const pct  = totalTypeEarn > 0 ? Math.round((earn / totalTypeEarn) * 100) : 0;
+        const label = type.replace('Cash-In-Rollover','In-Roll').replace('Cash-Out-Rollover','Out-Roll');
+        return `<div class="type-row">
+          <div class="type-icon-sm" style="background:${c.bg};color:${c.color};"><i class="ti ${c.icon}"></i></div>
+          <div class="type-name">${label}</div>
+          <div class="type-bar-track"><div class="type-bar-fill" style="width:${barW}%;background:${c.color};"></div></div>
+          <div class="type-earn-val" style="color:${c.color};">${fmt(earn)}</div>
+          <div class="type-pct-val">${pct}%</div>
+        </div>`;
+      }).join('');
+    }
+  }
+
+  // ── 4. Avg earn per txn + Peak hour ─────────────────────────────
+  const thisAvgEarn = thisTxns.length ? thisEarn / thisTxns.length : 0;
+  const lastEarn    = lastTxns.reduce((s,t) => s + (parseFloat(t.earn)||0), 0);
+  const lastAvgEarn = lastTxns.length ? lastEarn / lastTxns.length : 0;
+  const avgDeltaPct = lastAvgEarn > 0 ? ((thisAvgEarn - lastAvgEarn) / lastAvgEarn) * 100 : null;
+  set('insAvgEarnVal', fmt(Math.round(thisAvgEarn)));
+  const avgDeltaEl = document.getElementById('insAvgEarnDelta');
+  if (avgDeltaEl) {
+    if (avgDeltaPct === null) {
+      avgDeltaEl.textContent = 'No prior month data';
+      avgDeltaEl.style.color = 'var(--muted)';
+    } else {
+      const up = avgDeltaPct >= 0;
+      avgDeltaEl.innerHTML = `<i class="ti ti-arrow-${up?'up':'down'}" style="font-size:10px;"></i> ${up?'+':''}${avgDeltaPct.toFixed(1)}% vs last mo`;
+      avgDeltaEl.style.color = up ? 'var(--green)' : 'var(--red)';
+    }
+  }
+
+  // Peak hour — bucket all transactions by hour, sum earn per hour
+  const hourEarns = {};
+  state.transactions.forEach(t => {
+    const h = new Date(t.ts).getHours();
+    hourEarns[h] = (hourEarns[h]||0) + (parseFloat(t.earn)||0);
+  });
+  const peakEntry = Object.entries(hourEarns).sort((a,b) => b[1]-a[1])[0];
+  if (peakEntry) {
+    const h = parseInt(peakEntry[0]);
+    const label = `${h % 12 || 12} ${h < 12 ? 'AM' : 'PM'} – ${(h+1) % 12 || 12} ${h+1 < 12 ? 'AM' : 'PM'}`;
+    set('insPeakHour', label);
+    set('insPeakSub',  'avg ' + fmt(Math.round(peakEntry[1] / Math.max(1, Object.keys(hourEarns).length))) + ' earned');
+  } else {
+    set('insPeakHour', '—');
+    set('insPeakSub',  'Not enough data yet');
+  }
+
+  // ── 5. Cash Utilization (today) ──────────────────────────────────
+  const todayIn  = todayTxns.filter(t => !t.type.includes('Cash-Out') && !t.type.includes('Rollover')).reduce((s,t) => s+(parseFloat(t.amount)||0), 0);
+  const todayOut = todayTxns.filter(t =>  t.type.includes('Cash-Out') && !t.type.includes('Rollover')).reduce((s,t) => s+(parseFloat(t.amount)||0), 0);
+  const utilPct  = todayIn > 0 ? Math.min(100, Math.round((todayOut / todayIn) * 100)) : 0;
+  const isHigh   = utilPct >= 85;
+  set('insUtilPct', utilPct + '%');
+  set('insUtilSub', fmt(todayOut) + ' out of ' + fmt(todayIn) + ' cash-in deployed today');
+  const warnEl = document.getElementById('insUtilWarn');
+  if (warnEl) {
+    warnEl.className = 'util-warn-pill ' + (isHigh ? 'high' : 'ok');
+    warnEl.innerHTML = isHigh
+      ? '<i class="ti ti-alert-triangle" style="font-size:13px;"></i> High'
+      : '<i class="ti ti-circle-check"   style="font-size:13px;"></i> Good';
+  }
+  const utilBarEl = document.getElementById('insUtilBar');
+  if (utilBarEl) {
+    const fillColor = utilPct < 70
+      ? 'linear-gradient(90deg,#2DD4BF,#34D399)'
+      : utilPct < 85
+        ? 'linear-gradient(90deg,#2DD4BF,#F59E0B)'
+        : 'linear-gradient(90deg,#2DD4BF,#F59E0B 60%,#F87171)';
+    utilBarEl.style.background = fillColor;
+    utilBarEl.style.boxShadow  = isHigh ? '0 0 8px rgba(248,113,113,.35)' : '0 0 8px rgba(45,212,191,.25)';
+    setTimeout(() => { utilBarEl.style.width = utilPct + '%'; }, 60);
+  }
 }
 
 // Returns Monday of the week containing the given date
@@ -2417,7 +2755,7 @@ function switchTab(tab) {
   document.getElementById('tab-' + tab).classList.add('active');
   document.getElementById('view-' + tab).classList.add('active');
   if (tab === 'tally')   renderTally();
-  if (tab === 'reports') { const bal = calcBalances(); renderReports(bal); }
+  if (tab === 'reports') { if (_reportsMode === 'insights') renderInsights(); else { const bal = calcBalances(); renderReports(bal); } }
   if (tab === 'home')    { renderHome(); setTimeout(renderHomeChart, 50); }
   if (tab === 'log')     renderHistory();
 
