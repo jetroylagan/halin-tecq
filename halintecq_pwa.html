@@ -810,6 +810,77 @@
   ::-webkit-scrollbar-thumb { background:var(--s4); border-radius:3px; }
 
   @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+
+  /* ── MONTHLY EARNED CARD (Home) ── */
+  .month-earned-card {
+    background: linear-gradient(135deg, var(--s1) 0%, var(--s2) 100%);
+    border: 1px solid var(--border2);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    margin-bottom: 10px;
+    position: relative; overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,.3);
+  }
+  .month-earned-card::before {
+    content: ''; position: absolute; top: -40px; right: -30px;
+    width: 160px; height: 160px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(167,139,250,.10) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .month-earned-card::after {
+    content: ''; position: absolute; bottom: -30px; left: -20px;
+    width: 120px; height: 120px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(99,102,241,.07) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .mec-top { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:12px; position:relative; z-index:1; }
+  .mec-label { font-size:10px; font-weight:800; letter-spacing:.15em; text-transform:uppercase; color:rgba(167,139,250,.65); margin-bottom:6px; }
+  .mec-amount {
+    font-family:var(--mono); font-size:32px; font-weight:800; letter-spacing:-.8px; line-height:1;
+    background:linear-gradient(135deg,#A78BFA 0%,#C4B5FD 55%,#7C3AED 100%);
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+  }
+  .mec-amount.down {
+    background:linear-gradient(135deg,#F87171 0%,#FCA5A5 55%,#DC2626 100%);
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+  }
+  .mec-period { font-size:11px; color:var(--muted); margin-top:4px; font-weight:600; }
+  .mec-badge {
+    display:flex; align-items:center; gap:5px;
+    background:rgba(52,211,153,.1); border:1px solid rgba(52,211,153,.25);
+    border-radius:20px; padding:5px 10px; flex-shrink:0;
+  }
+  .mec-badge.down { background:rgba(248,113,113,.1); border-color:rgba(248,113,113,.25); }
+  .mec-badge i { font-size:13px; color:var(--green); }
+  .mec-badge.down i { color:var(--red); }
+  .mec-badge-pct { font-family:var(--mono); font-size:12px; font-weight:700; color:var(--green); }
+  .mec-badge.down .mec-badge-pct { color:var(--red); }
+  .mec-progress-wrap { position:relative; z-index:1; margin-bottom:10px; }
+  .mec-progress-labels { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px; }
+  .mec-progress-lbl { font-size:10px; color:var(--muted); font-weight:700; text-transform:uppercase; letter-spacing:.08em; }
+  .mec-progress-last { font-family:var(--mono); font-size:11px; color:var(--muted); }
+  .mec-bar-track { height:6px; background:var(--s4); border-radius:6px; position:relative; overflow:hidden; }
+  .mec-bar-fill {
+    height:100%; border-radius:6px; width:0%;
+    background:linear-gradient(90deg,#6366F1 0%,#A78BFA 60%,#C4B5FD 100%);
+    box-shadow:0 0 10px rgba(167,139,250,.4);
+    transition:width .8s cubic-bezier(.34,1.2,.64,1);
+  }
+  .mec-bar-fill.down { background:linear-gradient(90deg,#DC2626,#F87171); box-shadow:0 0 10px rgba(248,113,113,.35); }
+  .mec-stats { display:flex; border-top:1px solid rgba(255,255,255,.06); padding-top:10px; position:relative; z-index:1; }
+  .mec-stat { flex:1; display:flex; flex-direction:column; gap:3px; }
+  .mec-stat + .mec-stat { border-left:1px solid rgba(255,255,255,.06); padding-left:14px; margin-left:4px; }
+  .mec-stat-lbl { font-size:9px; font-weight:800; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); }
+  .mec-stat-val { font-family:var(--mono); font-size:13px; font-weight:700; color:var(--text2); }
+  [data-theme="ice"] .month-earned-card { background:linear-gradient(135deg,var(--s1) 0%,var(--s2) 100%); border-color:var(--border2); }
+  [data-theme="ice"] .month-earned-card::before { background:radial-gradient(circle,rgba(109,40,217,.08) 0%,transparent 65%); }
+  [data-theme="ice"] .month-earned-card::after  { background:radial-gradient(circle,rgba(99,102,241,.05) 0%,transparent 65%); }
+  [data-theme="ice"] .mec-label  { color:rgba(109,40,217,.65); }
+  [data-theme="ice"] .mec-amount { background:linear-gradient(135deg,#7C3AED 0%,#6D28D9 55%,#4C1D95 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  [data-theme="ice"] .mec-period { color:#6A7290; }
+  [data-theme="ice"] .mec-progress-lbl, [data-theme="ice"] .mec-progress-last { color:#6A7290; }
+  [data-theme="ice"] .mec-stat-lbl { color:#6A7290; }
+  [data-theme="ice"] .mec-stat-val { color:#3E4560; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
@@ -893,13 +964,15 @@
             <svg width="58" height="58" viewBox="0 0 58 58" aria-hidden="true">
               <circle class="ring-bg" cx="29" cy="29" r="22"/>
               <circle class="ring-fill" id="earnRingFill" cx="29" cy="29" r="22" stroke-dasharray="138.2" stroke-dashoffset="138.2"/>
-              <text class="ring-pct" id="earnRingPct" x="29" y="30">0%</text>
+              <text class="ring-pct" id="earnRingPct" x="29" y="26">0%</text>
+              <text class="ring-pct" x="29" y="36" style="font-size:7px;fill:var(--muted);">vs avg</text>
             </svg>
           </div>
           <div class="earn-info">
             <div class="earn-label">Today's Earnings</div>
             <div class="earn-amount" id="earnRingToday">₱0</div>
-            <div class="earn-avg" id="earnRingAvg">7-day avg: ₱0</div>
+            <div id="earnAvgPill" style="display:inline-flex;align-items:center;gap:4px;margin-top:5px;border-radius:20px;padding:3px 9px;font-size:11px;font-weight:700;border:1px solid;"></div>
+            <div class="earn-avg" id="earnRingAvg" style="margin-top:3px;">7-day avg: ₱0</div>
           </div>
         </div>
 
@@ -923,6 +996,44 @@
         <!-- hidden stat elements for JS compat -->
         <span id="hsTodayEarn" style="display:none;"></span>
         <span id="hsTodayTxns" style="display:none;"></span>
+      </div>
+
+      <!-- Monthly Earned -->
+      <div class="month-earned-card" id="monthEarnedCard">
+        <div class="mec-top">
+          <div>
+            <div class="mec-label">Total Earned This Month</div>
+            <div class="mec-amount" id="mecAmount">₱0</div>
+            <div class="mec-period" id="mecPeriod">—</div>
+          </div>
+          <div class="mec-badge" id="mecBadge">
+            <i class="ti ti-trending-up" id="mecBadgeIcon"></i>
+            <span class="mec-badge-pct" id="mecBadgePct">—</span>
+          </div>
+        </div>
+        <div class="mec-progress-wrap">
+          <div class="mec-progress-labels">
+            <span class="mec-progress-lbl">vs Last Month</span>
+            <span class="mec-progress-last" id="mecLastMonthLbl">—</span>
+          </div>
+          <div class="mec-bar-track">
+            <div class="mec-bar-fill" id="mecBarFill"></div>
+          </div>
+        </div>
+        <div class="mec-stats">
+          <div class="mec-stat">
+            <div class="mec-stat-lbl">Daily Avg</div>
+            <div class="mec-stat-val" id="mecDailyAvg">₱0</div>
+          </div>
+          <div class="mec-stat">
+            <div class="mec-stat-lbl">Best Day</div>
+            <div class="mec-stat-val" id="mecBestDay">₱0</div>
+          </div>
+          <div class="mec-stat">
+            <div class="mec-stat-lbl">Transactions</div>
+            <div class="mec-stat-val" id="mecTxnCount">0</div>
+          </div>
+        </div>
       </div>
 
       <!-- This Week Chart -->
@@ -3130,6 +3241,69 @@ function renderHome() {
   // Sparklines (7-day for each metric) — throttled
   if (!window._sparkThrottle) { window._sparkThrottle = true; setTimeout(() => { renderSparklines(); window._sparkThrottle = false; }, 300); }
 
+  // Monthly earned card
+  (function updateMonthEarned() {
+    const now  = new Date();
+    const yyyy = now.getFullYear();
+    const mm   = now.getMonth(); // 0-based
+
+    const isThisMonth = t => { const d = new Date(t.ts); return d.getFullYear() === yyyy && d.getMonth() === mm; };
+    const isLastMonth = t => {
+      const d = new Date(t.ts);
+      const lm = mm === 0 ? 11 : mm - 1;
+      const ly = mm === 0 ? yyyy - 1 : yyyy;
+      return d.getFullYear() === ly && d.getMonth() === lm;
+    };
+
+    const thisTxns = state.transactions.filter(isThisMonth);
+    const lastTxns = state.transactions.filter(isLastMonth);
+
+    const thisEarn = thisTxns.reduce((s,t) => s + (parseFloat(t.earn)||0), 0);
+    const lastEarn = lastTxns.reduce((s,t) => s + (parseFloat(t.earn)||0), 0);
+
+    // daily avg — days elapsed so far this month (min 1)
+    const daysSoFar = Math.max(1, now.getDate());
+    const dailyAvg  = thisEarn / daysSoFar;
+
+    // best single day
+    const earnByDay = {};
+    thisTxns.forEach(t => {
+      const key = new Date(t.ts).toDateString();
+      earnByDay[key] = (earnByDay[key] || 0) + (parseFloat(t.earn)||0);
+    });
+    const bestDay = Object.values(earnByDay).length ? Math.max(...Object.values(earnByDay)) : 0;
+
+    // % change vs last month
+    const pctChange = lastEarn > 0 ? ((thisEarn - lastEarn) / lastEarn) * 100 : null;
+    const isUp      = pctChange === null || pctChange >= 0;
+
+    // bar fill width: thisEarn / lastEarn, capped at 100%
+    const barPct = lastEarn > 0 ? Math.min(100, (thisEarn / lastEarn) * 100) : (thisEarn > 0 ? 100 : 0);
+
+    const monthName = now.toLocaleDateString('en-PH', { month: 'long', year: 'numeric' });
+    const lastMonthName = new Date(yyyy, mm - 1, 1).toLocaleDateString('en-PH', { month: 'short', year: 'numeric' });
+
+    const set = (id, txt) => { const e = el(id); if (e) e.textContent = txt; };
+    set('mecAmount',       fmt(thisEarn));
+    set('mecPeriod',       monthName + ' · ' + thisTxns.length + ' transactions');
+    set('mecLastMonthLbl', fmt(lastEarn) + ' · ' + lastMonthName);
+    set('mecDailyAvg',     fmt(dailyAvg));
+    set('mecBestDay',      fmt(bestDay));
+    set('mecTxnCount',     thisTxns.length);
+
+    const amtEl   = el('mecAmount');
+    const badgeEl = el('mecBadge');
+    const iconEl  = el('mecBadgeIcon');
+    const pctEl   = el('mecBadgePct');
+    const barEl   = el('mecBarFill');
+
+    if (amtEl)  { amtEl.className  = isUp ? 'mec-amount' : 'mec-amount down'; }
+    if (badgeEl){ badgeEl.className = isUp ? 'mec-badge'  : 'mec-badge down'; }
+    if (iconEl) { iconEl.className  = isUp ? 'ti ti-trending-up' : 'ti ti-trending-down'; }
+    if (pctEl)  { pctEl.textContent = pctChange === null ? 'New' : (isUp ? '+' : '') + pctChange.toFixed(1) + '%'; }
+    if (barEl)  { barEl.className = isUp ? 'mec-bar-fill' : 'mec-bar-fill down'; setTimeout(() => { barEl.style.width = barPct + '%'; }, 60); }
+  })();
+
   // Recent mini list (last 5) — same card format as Log tab
   const recentEl = el('homeRecentList');
   if (recentEl) {
@@ -3478,27 +3652,53 @@ function updateBackupDot() {
 
 
 function updateEarnRing(todayEarn) {
-  // 7-day average
+  // 7-day average — exclude today (i=1..7) so the benchmark is stable
   const days7 = [];
-  for (let i = 6; i >= 0; i--) {
+  for (let i = 7; i >= 1; i--) {
     const d = new Date(); d.setDate(d.getDate() - i);
     const ds = d.toDateString();
     days7.push(state.transactions.filter(t => new Date(t.ts).toDateString() === ds).reduce((s,t) => s+(parseFloat(t.earn)||0),0));
   }
   const avg7 = days7.reduce((s,v)=>s+v,0) / 7;
-  const pct = avg7 > 0 ? Math.min(todayEarn / (avg7 * 1.5), 1) : (todayEarn > 0 ? 0.5 : 0);
+
+  // 100% ring = you hit your avg; capped visually at 100%
+  const pct = avg7 > 0 ? Math.min(todayEarn / avg7, 1) : (todayEarn > 0 ? 1 : 0);
   const circumference = 138.2;
   const offset = circumference - pct * circumference;
 
-  const ring = document.getElementById('earnRingFill');
-  const ringPct = document.getElementById('earnRingPct');
+  const ring      = document.getElementById('earnRingFill');
+  const ringPct   = document.getElementById('earnRingPct');
   const ringToday = document.getElementById('earnRingToday');
-  const ringAvg = document.getElementById('earnRingAvg');
+  const ringAvg   = document.getElementById('earnRingAvg');
+  const pill      = document.getElementById('earnAvgPill');
 
-  if (ring) ring.style.strokeDashoffset = offset;
-  if (ringPct) ringPct.textContent = Math.round(pct * 100) + '%';
+  if (ring)      ring.style.strokeDashoffset = offset;
+  if (ringPct)   ringPct.textContent = Math.round(pct * 100) + '%';
   if (ringToday) ringToday.textContent = fmt(todayEarn);
-  if (ringAvg) ringAvg.textContent = '7-day avg: ' + fmt(Math.round(avg7));
+  if (ringAvg)   ringAvg.textContent = '7-day avg: ' + fmt(Math.round(avg7));
+
+  // Above / below avg pill
+  if (pill) {
+    if (avg7 === 0 && todayEarn === 0) {
+      pill.style.display = 'none';
+    } else {
+      pill.style.display = 'inline-flex';
+      const above = todayEarn >= avg7;
+      const diff  = Math.abs(todayEarn - avg7);
+      const diffPct = avg7 > 0 ? ((diff / avg7) * 100).toFixed(0) : '—';
+      if (above) {
+        pill.style.background    = 'rgba(52,211,153,.1)';
+        pill.style.borderColor   = 'rgba(52,211,153,.3)';
+        pill.style.color         = 'var(--green)';
+        pill.innerHTML = `<i class="ti ti-arrow-up" style="font-size:11px;"></i> Above avg${avg7 > 0 ? ' +' + diffPct + '%' : ''}`;
+      } else {
+        pill.style.background    = 'rgba(248,113,113,.1)';
+        pill.style.borderColor   = 'rgba(248,113,113,.3)';
+        pill.style.color         = 'var(--red)';
+        pill.innerHTML = `<i class="ti ti-arrow-down" style="font-size:11px;"></i> Below avg −${diffPct}%`;
+      }
+    }
+  }
 }
 
 function renderSparklines() {
