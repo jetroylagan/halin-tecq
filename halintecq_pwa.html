@@ -1010,12 +1010,191 @@
   [data-theme="ice"] .mec-progress-lbl, [data-theme="ice"] .mec-progress-last { color:#6A7290; }
   [data-theme="ice"] .mec-stat-lbl { color:#6A7290; }
   [data-theme="ice"] .mec-stat-val { color:#3E4560; }
+
+  /* ══════════════════════════════════════════════
+     RESPONSIVE — LEFT SIDEBAR (≥768px)
+  ══════════════════════════════════════════════ */
+  #left-sidebar { display:none; }
+  #desk-topbar  { display:none; }
+
+  @media (min-width:768px) {
+    /* Full-screen row layout */
+    #app { max-width:100%; flex-direction:row; height:100dvh; overflow:hidden; }
+    #app::before { display:none; }
+
+    /* Hide mobile-only elements */
+    #header { display:none !important; }
+    #tabs   { display:none !important; }
+
+    /* ── SIDEBAR ── */
+    #left-sidebar {
+      display:flex; flex-direction:column;
+      width:240px; flex-shrink:0;
+      background:var(--s1);
+      border-right:1px solid var(--border2);
+      height:100dvh; z-index:30; overflow:hidden;
+    }
+    .sb-logo {
+      display:flex; align-items:center; gap:12px;
+      padding:20px 18px 16px;
+      border-bottom:1px solid var(--border); flex-shrink:0;
+    }
+    .sb-logo-icon {
+      width:38px; height:38px; border-radius:12px;
+      background:linear-gradient(135deg,#3730A3,#6366F1);
+      display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    }
+    .sb-logo-icon svg { display:block; }
+    .sb-logo-text { font-size:16px; font-weight:800; letter-spacing:.02em; white-space:nowrap; }
+    .sb-logo-text span { color:var(--teal); }
+    .sb-logo-sub { font-size:10px; color:var(--muted); font-weight:500; margin-top:1px; }
+
+    /* Balance summary block */
+    .sb-balances {
+      margin:12px 12px 0;
+      background:var(--s2); border:1px solid var(--border2); border-radius:14px;
+      padding:12px 14px; flex-shrink:0;
+    }
+    .sb-bal-row { display:flex; align-items:center; justify-content:space-between; padding:3px 0; }
+    .sb-bal-lbl { font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
+    .sb-bal-val { font-family:var(--mono); font-size:13px; font-weight:800; }
+    .sb-bal-val.coh  { color:var(--amber); }
+    .sb-bal-val.cog  { color:var(--teal); }
+    .sb-bal-val.earn { color:var(--green); }
+    .sb-bal-divider  { height:1px; background:var(--border); margin:4px 0; }
+
+    /* Nav */
+    .sb-nav { flex:1; padding:14px 10px 8px; display:flex; flex-direction:column; gap:2px; overflow-y:auto; }
+    .sb-section-lbl {
+      font-size:9px; font-weight:800; letter-spacing:.14em; text-transform:uppercase;
+      color:var(--muted); padding:10px 10px 4px;
+    }
+    .sb-btn {
+      display:flex; align-items:center; gap:12px;
+      padding:11px 12px; border-radius:12px;
+      background:none; border:1px solid transparent; cursor:pointer;
+      color:var(--text2); font-family:var(--font);
+      font-size:13px; font-weight:600; text-align:left; width:100%;
+      white-space:nowrap; transition:all .15s;
+    }
+    .sb-btn i { font-size:19px; flex-shrink:0; color:var(--muted); transition:color .15s; }
+    .sb-btn:hover { background:var(--s2); color:var(--text); border-color:var(--border); }
+    .sb-btn:hover i { color:var(--text2); }
+    .sb-btn.active {
+      background:linear-gradient(135deg,rgba(99,102,241,.18),rgba(99,102,241,.08));
+      color:#fff; border-color:rgba(99,102,241,.3);
+      box-shadow:0 2px 12px rgba(99,102,241,.18);
+    }
+    .sb-btn.active i { color:var(--indigo); }
+
+    .sb-footer {
+      padding:8px 10px 16px;
+      border-top:1px solid var(--border);
+      display:flex; flex-direction:column; gap:2px; flex-shrink:0;
+    }
+
+    /* ── RIGHT COLUMN ── */
+    #app-body { flex:1; min-width:0; display:flex; flex-direction:column; height:100dvh; overflow:hidden; }
+
+    /* Slim desktop topbar */
+    #desk-topbar {
+      display:flex; align-items:center; justify-content:space-between;
+      padding:10px 24px;
+      background:var(--s1); border-bottom:1px solid var(--border2);
+      flex-shrink:0; z-index:20;
+    }
+    .desk-topbar-date { font-size:12px; color:var(--muted); font-weight:500; }
+    .desk-topbar-actions { display:flex; align-items:center; gap:8px; }
+    .desk-topbar-btn {
+      display:flex; align-items:center; gap:6px;
+      padding:7px 14px; border-radius:10px; border:1px solid var(--border2);
+      background:var(--s2); color:var(--text2); font-size:12px; font-weight:700;
+      cursor:pointer; font-family:var(--font); transition:all .15s;
+    }
+    .desk-topbar-btn:hover { background:var(--s3); color:var(--text); }
+    .desk-topbar-btn.primary {
+      background:linear-gradient(135deg,#4F46E5,#6D28D9);
+      border-color:rgba(99,102,241,.4); color:#fff;
+      box-shadow:0 2px 12px rgba(99,102,241,.3);
+    }
+    .desk-topbar-btn.primary:hover { box-shadow:0 4px 20px rgba(99,102,241,.4); }
+
+    /* Content area */
+    #content { flex:1; overflow-y:auto; padding:0 8px; }
+    .view { max-width:720px; margin:0 auto; padding-top:4px; }
+  }
+
+  @media (min-width:1100px) {
+    #left-sidebar { width:256px; }
+    .view { max-width:800px; }
+    #content { padding:0 16px; }
+  }
+
+  @media (min-width:1400px) {
+    #left-sidebar { width:272px; }
+    .view { max-width:900px; }
+    #content { padding:0 24px; }
+  }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 </head>
 <body>
 <div id="app">
+
+  <!-- ── LEFT SIDEBAR (desktop ≥768px) ── -->
+  <div id="left-sidebar">
+
+    <!-- Logo -->
+    <div class="sb-logo">
+      <div class="sb-logo-icon">
+        <svg width="20" height="20" viewBox="0 0 22 22" fill="none">
+          <ellipse cx="8"  cy="11" rx="5.5" ry="5.5" stroke="#A5B4FC" stroke-width="2"/>
+          <ellipse cx="14" cy="11" rx="5.5" ry="5.5" stroke="#2DD4BF" stroke-width="2"/>
+          <text x="11" y="14.5" font-size="7" font-weight="700" fill="#F59E0B" font-family="system-ui" text-anchor="middle">₱</text>
+        </svg>
+      </div>
+      <div class="sb-logo-text">Halin-<span>TecQ</span></div>
+    </div>
+
+    <!-- Live balances -->
+    <div class="sb-balances">
+      <div class="sb-bal-row">
+        <span class="sb-bal-lbl">Cash on Hand</span>
+        <span class="sb-bal-val coh" id="sbCOH">₱0</span>
+      </div>
+      <div class="sb-bal-row">
+        <span class="sb-bal-lbl">GCash</span>
+        <span class="sb-bal-val cog" id="sbCOG">₱0</span>
+      </div>
+      <div class="sb-bal-divider"></div>
+      <div class="sb-bal-row">
+        <span class="sb-bal-lbl">Earned</span>
+        <span class="sb-bal-val earn" id="sbEarned">₱0</span>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="sb-nav">
+      <div class="sb-section-lbl">Menu</div>
+      <button class="sb-btn active" id="sb-tab-home"     onclick="switchTab('home')">    <i class="ti ti-layout-dashboard"></i> Home</button>
+      <button class="sb-btn"        id="sb-tab-log"      onclick="switchTab('log')">     <i class="ti ti-arrows-exchange"></i>  Txns</button>
+      <button class="sb-btn"        id="sb-tab-reports"  onclick="switchTab('reports')"> <i class="ti ti-sparkles"></i>          Insights</button>
+      <button class="sb-btn"        id="sb-tab-tally"    onclick="switchTab('tally')">   <i class="ti ti-abacus"></i>            Tally</button>
+      <button class="sb-btn"        id="sb-tab-settings" onclick="switchTab('settings')"><i class="ti ti-settings-2"></i>         More</button>
+    </div>
+
+    <!-- Footer actions -->
+    <div class="sb-footer">
+      <button class="sb-btn" onclick="openAddModal()">
+        <i class="ti ti-plus"></i> New Transaction
+      </button>
+      <button class="sb-btn" onclick="toggleTheme()">
+        <i class="ti ti-moon" id="sbThemeIcon"></i> <span id="sbThemeLabel">Dark Mode</span>
+      </button>
+    </div>
+
+  </div><!-- /left-sidebar -->
 
   <!-- HEADER -->
   <div id="header">
@@ -1080,6 +1259,20 @@
   </div>
 
   <div id="app-body">
+
+  <!-- Desktop slim topbar (hidden on mobile via CSS) -->
+  <div id="desk-topbar">
+    <div class="desk-topbar-date" id="deskTopbarDate">—</div>
+    <div class="desk-topbar-actions">
+      <button class="desk-topbar-btn" onclick="toggleTheme()">
+        <i class="ti ti-moon" id="deskThemeIcon"></i> <span id="deskThemeLabel">Light Mode</span>
+      </button>
+      <button class="desk-topbar-btn primary" onclick="openAddModal()">
+        <i class="ti ti-plus"></i> New Transaction
+      </button>
+    </div>
+  </div>
+
   <div id="content" style="position:relative;">
     <div id="ptr-indicator">↻</div>
 
@@ -1940,6 +2133,7 @@ function fmt(n) {
 function render() {
   recalcCohAfter(); // ensure cogAfter is always populated (covers imported transactions)
   const bal = calcBalances();
+  _syncSidebarBalances();
 
   // Header date
   document.getElementById('headerDate').textContent =
@@ -2981,17 +3175,44 @@ function switchTab(tab) {
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   document.getElementById('tab-' + tab).classList.add('active');
   document.getElementById('view-' + tab).classList.add('active');
+
+  // sync sidebar buttons
+  document.querySelectorAll('.sb-btn[id^="sb-tab-"]').forEach(b => b.classList.remove('active'));
+  const sbBtn = document.getElementById('sb-tab-' + tab);
+  if (sbBtn) sbBtn.classList.add('active');
+
   if (tab === 'tally')   renderTally();
   if (tab === 'reports') { if (_reportsMode === 'insights') renderInsights(); else { const bal = calcBalances(); renderReports(bal); } }
   if (tab === 'home')    { renderHome(); setTimeout(renderHomeChart, 50); }
   if (tab === 'log')     renderHistory();
 
-
   // Reset scroll and header state
   const content = document.getElementById('content');
   if (content) content.scrollTop = 0;
-  // Home always shows full header; other tabs start expanded then collapse on scroll
   collapseHeader(false);
+}
+
+function _syncSidebarBalances() {
+  const bal = calcBalances();
+  const fmtN = v => '₱' + Math.round(v).toLocaleString();
+  const s = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+  s('sbCOH',    fmtN(bal.coh));
+  s('sbCOG',    fmtN(bal.cog));
+  s('sbEarned', fmtN(bal.totalEarned));
+
+  // Desk topbar date
+  const dateStr = new Date().toLocaleDateString('en-PH', { weekday:'long', month:'long', day:'numeric', year:'numeric' });
+  s('deskTopbarDate', dateStr);
+
+  // Theme icons (sidebar + topbar)
+  const theme = document.documentElement.getAttribute('data-theme') || 'midnight';
+  const isDark = theme === 'midnight';
+  [['sbThemeIcon','sbThemeLabel'],['deskThemeIcon','deskThemeLabel']].forEach(([iconId, lblId]) => {
+    const ic = document.getElementById(iconId);
+    const lb = document.getElementById(lblId);
+    if (ic) ic.className = isDark ? 'ti ti-sun' : 'ti ti-moon';
+    if (lb) lb.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+  });
 }
 
 function filterHistory(type, el) {
