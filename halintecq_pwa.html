@@ -3112,6 +3112,10 @@ function exportCSV() {
   a.download = 'halin-export-csv-' + new Date().toISOString().slice(0,10) + '.csv';
   a.click();
   URL.revokeObjectURL(a.href);
+  const csvBackupTs = new Date().toISOString();
+  localStorage.setItem('gcash_last_backup', csvBackupTs);
+  sbPushLastBackupAt(csvBackupTs);
+  renderBackupMeta();
   showToast('CSV exported ✓');
 }
 
@@ -3596,7 +3600,7 @@ async function renderBackupMeta() {
       .maybeSingle();
     const ts = data?.last_backup_at || null;
     if (ts) localStorage.setItem('gcash_last_backup', ts);
-    el.innerHTML = _fmtBackup(ts);
+    el.innerHTML = _fmtBackup(ts || localStorage.getItem('gcash_last_backup'));
   } catch(e) {
     // Network error — keep the cached value already shown
   }
@@ -4418,6 +4422,10 @@ function exportXLSX() {
 
   const dateStr = new Date().toISOString().slice(0,10);
   XLSX.writeFile(wb, `halin-export-excel-${dateStr}.xlsx`);
+  const xlsxBackupTs = new Date().toISOString();
+  localStorage.setItem('gcash_last_backup', xlsxBackupTs);
+  sbPushLastBackupAt(xlsxBackupTs);
+  renderBackupMeta();
   showToast('Excel exported ✓');
 }
 
