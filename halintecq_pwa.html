@@ -4847,12 +4847,14 @@ async function sbPushAll(silent = false) {
 
 async function sbPushSettings() {
   if (!_sbClient || !_sbUser) return;
+  const lastBackup = localStorage.getItem('gcash_last_backup') || null;
   const { error } = await _sbClient.from('settings').upsert({
-    user_id:       _sbUser.id,
-    open_coh:      state.settings.openCOH,
-    open_cog:      state.settings.openCOG,
-    capital:       state.settings.capital,
+    user_id:        _sbUser.id,
+    open_coh:       state.settings.openCOH,
+    open_cog:       state.settings.openCOG,
+    capital:        state.settings.capital,
     last_synced_at: new Date().toISOString(),
+    ...(lastBackup ? { last_backup_at: lastBackup } : {}),
   });
   if (error) throw Object.assign(error, { _step: 'upsert settings' });
 }
