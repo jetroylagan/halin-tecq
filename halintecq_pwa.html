@@ -738,15 +738,18 @@
   .tally-mini-pod.cog .tmp-val { background-image:linear-gradient(135deg,#2DD4BF,#5EEAD4); }
 
   /* ── EARN HERO (Home) ── */
-  .earn-hero { background:linear-gradient(135deg,var(--s1) 0%,var(--s2) 100%); border:1px solid var(--border2); border-radius:var(--radius); padding:16px; margin-bottom:12px; display:flex; align-items:center; gap:16px; box-shadow:0 4px 20px rgba(0,0,0,.3); position:relative; overflow:hidden; }
+  .earn-hero { background:linear-gradient(135deg,var(--s1) 0%,var(--s2) 100%); border:1px solid var(--border2); border-radius:var(--radius); padding:0; margin-bottom:12px; box-shadow:0 4px 20px rgba(0,0,0,.3); position:relative; overflow:hidden; }
   .earn-hero::before { content:''; position:absolute; top:-30px; right:-30px; width:120px; height:120px; border-radius:50%; background:radial-gradient(circle,rgba(45,212,191,.15) 0%,transparent 70%); pointer-events:none; }
+  .earn-hero-hdr { display:flex; align-items:center; justify-content:space-between; padding:10px 16px; background:var(--s3); border-bottom:1px solid var(--border); position:relative; z-index:1; }
+  .earn-hero-body { display:flex; align-items:center; gap:16px; padding:14px 16px; position:relative; z-index:1; }
+  .earn-date-pill { background:var(--s4); border:1px solid var(--border2); border-radius:10px; padding:3px 9px; font-size:10px; font-weight:700; color:var(--text2); }
   .earn-ring { flex-shrink:0; position:relative; }
   .earn-ring svg { display:block; }
   .ring-bg   { fill:none; stroke:var(--s4); stroke-width:5; }
   .ring-fill { fill:none; stroke:var(--teal); stroke-width:5; stroke-linecap:round; transform-origin:center; transform:rotate(-90deg); transition:stroke-dashoffset .8s cubic-bezier(.34,1.2,.64,1); filter:drop-shadow(0 0 6px rgba(45,212,191,.4)); }
   .ring-pct  { font-family:var(--mono); font-size:9px; font-weight:700; fill:var(--teal); text-anchor:middle; dominant-baseline:middle; }
   .earn-info { flex:1; min-width:0; }
-  .earn-label  { font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
+  .earn-label  { font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
   .earn-amount { font-family:var(--mono); font-size:28px; font-weight:800; color:var(--teal); line-height:1; letter-spacing:-.5px; }
   .earn-avg    { font-size:13px; color:var(--muted); margin-top:5px; }
 
@@ -758,7 +761,7 @@
   .qs-card.out::before { background:radial-gradient(circle,rgba(248,113,113,.12) 0%,transparent 70%); }
   .qs-val { font-family:var(--mono); font-size:18px; font-weight:700; line-height:1; margin-bottom:4px; }
   .qs-lbl { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); }
-  .qs-icon { position:absolute; right:12px; top:50%; transform:translateY(-50%); font-size:22px; opacity:.2; }
+  .qs-icon { position:absolute; right:12px; top:50%; transform:translateY(-50%); font-size:22px; opacity:.5; }
 
   /* ── WEEK CHART CARD ── */
   .week-chart-card { background:var(--s1); border:1px solid var(--border); border-radius:var(--radius); margin-bottom:12px; overflow:hidden; }
@@ -813,15 +816,17 @@
 
   /* ── REPORTS / INSIGHTS PILL TOGGLE ── */
   .rpt-pill-toggle { display:flex; background:var(--s2); border:1px solid var(--border2); border-radius:14px; padding:3px; gap:3px; margin-bottom:14px; }
-  .rpt-pill-btn { flex:1; display:flex; align-items:center; justify-content:center; gap:6px; padding:9px 0; border-radius:10px; border:none; font-family:var(--font); font-size:12px; font-weight:700; cursor:pointer; color:var(--muted); background:transparent; transition:all .2s; }
-  .rpt-pill-btn i { font-size:15px; }
+  .rpt-pill-btn { flex:1; display:flex; align-items:center; justify-content:center; gap:6px; padding:10px 0; border-radius:10px; border:none; font-family:var(--font); font-size:14px; font-weight:700; cursor:pointer; color:var(--muted); background:transparent; transition:all .2s; }
+  .rpt-pill-btn i { font-size:17px; }
   .rpt-pill-btn.active-rpt { color:var(--teal);   background:var(--teal-dim); }
   .rpt-pill-btn.active-ins { color:var(--purple); background:var(--purple-dim); }
 
   /* ── INSIGHT CARDS ── */
-  .ins-section-title { font-size:9px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-bottom:8px; }
+  .ins-section-title { font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
 
-  .ins-card { background:linear-gradient(135deg,var(--s1),var(--s2)); border:1px solid var(--border2); border-radius:var(--radius); padding:14px 16px; margin-bottom:10px; position:relative; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,.3); }
+  .ins-card { background:linear-gradient(135deg,var(--s1),var(--s2)); border:1px solid var(--border2); border-radius:var(--radius); padding:0; margin-bottom:10px; position:relative; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,.3); }
+  .ins-card-hdr { display:flex; align-items:center; justify-content:space-between; padding:10px 16px; background:var(--s3); border-bottom:1px solid var(--border); position:relative; z-index:1; }
+  .ins-card-body { padding:14px 16px; position:relative; z-index:1; }
   .ins-card::before { content:''; position:absolute; top:-20px; right:-20px; width:90px; height:90px; border-radius:50%; pointer-events:none; }
   .ins-card.indigo::before { background:radial-gradient(circle,rgba(99,102,241,.12) 0%,transparent 70%); }
   .ins-card.amber::before  { background:radial-gradient(circle,rgba(245,158,11,.12) 0%,transparent 70%); }
@@ -830,8 +835,8 @@
   .ins-card.purple::before { background:radial-gradient(circle,rgba(167,139,250,.12) 0%,transparent 70%); }
 
   /* Projection */
-  .ins-proj-top   { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:10px; }
-  .ins-proj-lbl   { font-size:9px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-bottom:4px; }
+  .ins-proj-top   { margin-bottom:10px; }
+  .ins-proj-lbl   { font-size:10px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-bottom:4px; }
   .ins-proj-val   { font-family:var(--mono); font-size:22px; font-weight:800; letter-spacing:-.5px; background:linear-gradient(135deg,#818CF8,#C4B5FD); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
   .ins-proj-sub   { font-size:10px; color:var(--muted); margin-top:3px; }
   .ins-days-pill  { background:var(--s3); border:1px solid var(--border2); border-radius:20px; padding:4px 10px; font-size:10px; font-weight:700; color:var(--text2); white-space:nowrap; flex-shrink:0; }
@@ -843,7 +848,7 @@
   .streak-ring  { width:52px; height:52px; border-radius:50%; background:linear-gradient(135deg,rgba(245,158,11,.15),rgba(245,158,11,.05)); border:2px solid rgba(245,158,11,.3); display:flex; flex-direction:column; align-items:center; justify-content:center; flex-shrink:0; }
   .streak-num   { font-family:var(--mono); font-size:18px; font-weight:800; color:var(--amber); line-height:1; }
   .streak-days  { font-size:8px; font-weight:700; text-transform:uppercase; color:rgba(245,158,11,.6); letter-spacing:.08em; }
-  .streak-lbl   { font-size:9px; font-weight:800; text-transform:uppercase; letter-spacing:.14em; color:var(--muted); margin-bottom:3px; }
+  .streak-lbl   { font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); margin-bottom:3px; }
   .streak-title { font-size:15px; font-weight:800; color:var(--amber); }
   .streak-sub   { font-size:11px; color:var(--muted); margin-top:3px; }
   .streak-dots  { display:flex; gap:4px; margin-top:8px; }
@@ -863,9 +868,9 @@
   /* Mini 2-col cards */
   .ins-mini-grid  { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:10px; }
   .ins-mini-card  { background:linear-gradient(135deg,var(--s1),var(--s2)); border:1px solid var(--border2); border-radius:var(--radius-sm); padding:12px 14px; position:relative; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,.3); }
-  .ins-mini-lbl   { font-size:9px; font-weight:800; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); margin-bottom:5px; }
-  .ins-mini-val   { font-family:var(--mono); font-size:18px; font-weight:800; line-height:1; }
-  .ins-mini-delta { display:inline-flex; align-items:center; gap:3px; margin-top:5px; font-size:10px; font-weight:700; }
+  .ins-mini-lbl   { font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.10em; color:var(--muted); margin-bottom:5px; }
+  .ins-mini-val   { font-family:var(--mono); font-size:20px; font-weight:800; line-height:1; }
+  .ins-mini-delta { display:inline-flex; align-items:center; gap:3px; margin-top:5px; font-size:11px; font-weight:700; }
 
   /* Time-of-day segments */
   .tod-row { display:flex; align-items:center; gap:10px; margin-bottom:9px; }
@@ -881,7 +886,7 @@
 
   /* Utilization */
   .util-top       { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:10px; }
-  .util-lbl       { font-size:9px; font-weight:800; text-transform:uppercase; letter-spacing:.14em; color:var(--muted); margin-bottom:4px; }
+  .util-lbl       { font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); margin-bottom:4px; }
   .util-val       { font-family:var(--mono); font-size:22px; font-weight:800; color:var(--amber); }
   .util-warn-pill { display:inline-flex; align-items:center; gap:4px; border-radius:20px; padding:4px 10px; font-size:11px; font-weight:700; }
   .util-warn-pill.high { background:rgba(248,113,113,.1); border:1px solid rgba(248,113,113,.25); color:var(--red); }
@@ -895,20 +900,21 @@
   .ins-card.green::before { background:radial-gradient(circle,rgba(52,211,153,.12)  0%,transparent 70%); }
 
   /* ── Monthly History bar chart ── */
-  .ins-bar-chart { display:flex; align-items:flex-end; gap:4px; height:68px; margin-top:8px; }
-  .ins-bc-col    { flex:1; display:flex; flex-direction:column; align-items:center; gap:3px; }
-  .ins-bc-bar    { width:100%; border-radius:3px 3px 0 0; min-height:3px; }
-  .ins-bc-lbl    { font-size:7px; color:var(--muted); font-weight:700; }
-  .ins-bc-amt    { font-size:7px; font-family:var(--mono); font-weight:700; color:var(--muted); line-height:1.2; min-height:9px; }
+  .ins-history-amts      { display:flex; gap:6px; margin-top:10px; margin-bottom:5px; }
+  .ins-history-amts span { flex:1; text-align:center; font-size:9px; font-family:var(--mono); font-weight:700; color:var(--muted); }
+  .ins-bar-chart { display:flex; align-items:flex-end; gap:6px; height:72px; }
+  .ins-bc-col    { flex:1; display:flex; flex-direction:column; align-items:center; gap:5px; }
+  .ins-bc-bar    { width:100%; border-radius:4px 4px 0 0; min-height:4px; flex-shrink:0; }
+  .ins-bc-lbl    { font-size:9px; color:var(--muted); font-weight:700; }
 
   /* ── Best Day of Week ── */
   .ins-dow-row   { display:flex; align-items:center; gap:8px; margin-bottom:7px; }
   .ins-dow-row:last-child { margin-bottom:0; }
-  .ins-dow-day   { font-size:11px; font-weight:700; color:var(--text2); width:30px; flex-shrink:0; }
+  .ins-dow-day   { font-size:12px; font-weight:700; color:var(--text2); width:30px; flex-shrink:0; }
   .ins-dow-track { flex:1; height:6px; background:var(--s4); border-radius:6px; overflow:hidden; }
   .ins-dow-fill  { height:100%; border-radius:6px; }
-  .ins-dow-earn  { font-family:var(--mono); font-size:11px; font-weight:700; width:46px; text-align:right; flex-shrink:0; }
-  .ins-dow-badge { font-size:8px; font-weight:800; text-transform:uppercase; letter-spacing:.06em; background:var(--teal-dim); color:var(--teal); border:1px solid rgba(45,212,191,.3); border-radius:20px; padding:1px 6px; margin-left:2px; flex-shrink:0; }
+  .ins-dow-earn  { font-family:var(--mono); font-size:12px; font-weight:700; width:48px; text-align:right; flex-shrink:0; }
+  .ins-dow-badge { font-size:9px; font-weight:800; text-transform:uppercase; letter-spacing:.06em; background:var(--teal-dim); color:var(--teal); border:1px solid rgba(45,212,191,.3); border-radius:20px; padding:1px 6px; margin-left:2px; flex-shrink:0; }
 
   /* ── Active Days calendar dots ── */
   .ins-active-day-grid { display:grid; grid-template-columns:repeat(7,1fr); gap:3px; margin-top:7px; }
@@ -922,24 +928,28 @@
   .ins-milestone-done { font-size:7px; color:rgba(99,102,241,.6); font-weight:700; text-transform:uppercase; }
 
   /* ── COH / GCash ratio bar ── */
-  .ins-ratio-bar    { height:11px; border-radius:11px; overflow:hidden; display:flex; margin:10px 0 8px; }
-  .ins-ratio-coh    { background:linear-gradient(90deg,#F59E0B,#FCD34D); transition:width .8s cubic-bezier(.34,1.2,.64,1); width:0; }
-  .ins-ratio-cog    { background:linear-gradient(90deg,#2DD4BF,#5EEAD4); flex:1; }
-  .ins-ratio-legend { display:flex; gap:14px; flex-wrap:wrap; }
-  .ins-ratio-leg    { display:flex; align-items:center; gap:5px; font-size:11px; }
-  .ins-ratio-dot    { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
-  .ins-ratio-pct    { font-size:10px; color:var(--muted); }
+  .ins-ratio-bar    { height:14px; border-radius:14px; overflow:hidden; display:flex; margin:12px 0 14px; }
+  .ins-ratio-coh    { background:linear-gradient(90deg,#D97706,#F59E0B,#FCD34D); transition:width .8s cubic-bezier(.34,1.2,.64,1); width:0; }
+  .ins-ratio-cog    { background:linear-gradient(90deg,#0D9488,#2DD4BF,#5EEAD4); flex:1; }
+  .ins-ratio-legend { display:flex; gap:20px; }
+  .ins-ratio-leg    { display:flex; align-items:center; gap:8px; }
+  .ins-ratio-dot    { width:8px; height:8px; border-radius:50%; flex-shrink:0; margin-top:2px; align-self:flex-start; }
+  .ins-ratio-val    { font-family:var(--mono); font-size:16px; font-weight:800; line-height:1.1; }
+  .ins-ratio-pct    { font-size:13px; font-weight:700; color:var(--text2); margin-left:3px; }
+  .ins-ratio-name   { font-size:11px; color:var(--muted); margin-top:2px; }
 
   /* ── MONTHLY EARNED CARD (Home) ── */
   .month-earned-card {
     background: linear-gradient(135deg, var(--s1) 0%, var(--s2) 100%);
     border: 1px solid var(--border2);
     border-radius: var(--radius);
-    padding: 16px 18px;
+    padding: 0;
     margin-bottom: 10px;
     position: relative; overflow: hidden;
     box-shadow: 0 4px 20px rgba(0,0,0,.3);
   }
+  .mec-header { display:flex; align-items:center; justify-content:space-between; padding:10px 18px; background:var(--s3); border-bottom:1px solid var(--border); position:relative; z-index:1; }
+  .mec-body   { padding:14px 18px 16px; position:relative; z-index:1; }
   .month-earned-card::before {
     content: ''; position: absolute; top: -40px; right: -30px;
     width: 160px; height: 160px; border-radius: 50%;
@@ -952,8 +962,8 @@
     background: radial-gradient(circle, rgba(99,102,241,.07) 0%, transparent 65%);
     pointer-events: none;
   }
-  .mec-top { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:12px; position:relative; z-index:1; }
-  .mec-label { font-size:10px; font-weight:800; letter-spacing:.15em; text-transform:uppercase; color:rgba(167,139,250,.65); margin-bottom:6px; }
+  .mec-top { margin-bottom:12px; }
+  .mec-label { font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:rgba(167,139,250,.65); margin-bottom:6px; }
   .mec-amount {
     font-family:var(--mono); font-size:32px; font-weight:800; letter-spacing:-.8px; line-height:1;
     background:linear-gradient(135deg,#A78BFA 0%,#C4B5FD 55%,#7C3AED 100%);
@@ -1079,19 +1089,26 @@
       <!-- Today's earnings ring + quick stats -->
       <div class="home-section">
         <div class="earn-hero">
-          <div class="earn-ring">
-            <svg width="58" height="58" viewBox="0 0 58 58" aria-hidden="true">
-              <circle class="ring-bg" cx="29" cy="29" r="22"/>
-              <circle class="ring-fill" id="earnRingFill" cx="29" cy="29" r="22" stroke-dasharray="138.2" stroke-dashoffset="138.2"/>
-              <text class="ring-pct" id="earnRingPct" x="29" y="26">0%</text>
-              <text class="ring-pct" x="29" y="36" style="font-size:7px;fill:var(--muted);">vs avg</text>
-            </svg>
-          </div>
-          <div class="earn-info">
+          <div class="earn-hero-hdr">
             <div class="earn-label">Today's Earnings</div>
-            <div class="earn-amount" id="earnRingToday">₱0</div>
-            <div id="earnAvgPill" style="display:inline-flex;align-items:center;gap:4px;margin-top:5px;border-radius:20px;padding:3px 9px;font-size:11px;font-weight:700;border:1px solid;"></div>
-            <div class="earn-avg" id="earnRingAvg" style="margin-top:3px;">7-day avg: ₱0</div>
+            <div class="earn-date-pill" id="earnDatePill">—</div>
+          </div>
+          <div class="earn-hero-body">
+            <div class="earn-ring">
+              <svg width="58" height="58" viewBox="0 0 58 58" aria-hidden="true">
+                <circle class="ring-bg" cx="29" cy="29" r="22"/>
+                <circle class="ring-fill" id="earnRingFill" cx="29" cy="29" r="22" stroke-dasharray="138.2" stroke-dashoffset="138.2"/>
+                <text class="ring-pct" id="earnRingPct" x="29" y="26">0%</text>
+                <text class="ring-pct" x="29" y="36" style="font-size:7px;fill:var(--muted);">vs avg</text>
+              </svg>
+            </div>
+            <div class="earn-info">
+              <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                <div class="earn-amount" id="earnRingToday">₱0</div>
+                <div id="earnAvgPill" style="display:none;align-items:center;gap:4px;border-radius:20px;padding:3px 9px;font-size:11px;font-weight:700;border:1px solid;"></div>
+              </div>
+              <div class="earn-avg" id="earnRingAvg" style="margin-top:4px;">7-day avg: ₱0</div>
+            </div>
           </div>
         </div>
 
@@ -1119,15 +1136,20 @@
 
       <!-- Monthly Earned -->
       <div class="month-earned-card" id="monthEarnedCard">
+        <div class="mec-header">
+          <div class="mec-label">Total Earned This Month</div>
+        </div>
+        <div class="mec-body">
         <div class="mec-top">
           <div>
-            <div class="mec-label">Total Earned This Month</div>
-            <div class="mec-amount" id="mecAmount">₱0</div>
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+              <div class="mec-amount" id="mecAmount">₱0</div>
+              <div class="mec-badge" id="mecBadge">
+                <i class="ti ti-trending-up" id="mecBadgeIcon"></i>
+                <span class="mec-badge-pct" id="mecBadgePct">—</span>
+              </div>
+            </div>
             <div class="mec-period" id="mecPeriod">—</div>
-          </div>
-          <div class="mec-badge" id="mecBadge">
-            <i class="ti ti-trending-up" id="mecBadgeIcon"></i>
-            <span class="mec-badge-pct" id="mecBadgePct">—</span>
           </div>
         </div>
         <div class="mec-progress-wrap">
@@ -1153,6 +1175,7 @@
             <div class="mec-stat-val" id="mecTxnCount">0</div>
           </div>
         </div>
+        </div><!-- /.mec-body -->
       </div>
 
       <!-- This Week Chart -->
@@ -1195,11 +1218,12 @@
 
       <!-- Recent Activity -->
       <div class="home-section">
-        <div class="flex-between" style="margin-bottom:8px;">
-          <div class="section-divider" style="flex:1;margin:0 8px 0 0;"><span class="section-divider-label">Recent Transactions</span></div>
-          <span onclick="switchTab('log')" style="font-size:11px;color:var(--teal);cursor:pointer;font-weight:700;">See all →</span>
+        <div class="recent-mini" id="homeRecentList">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:var(--s3);border-bottom:1px solid var(--border);">
+            <span style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);">Recent Transactions</span>
+            <span onclick="switchTab('log')" style="font-size:11px;color:var(--teal);cursor:pointer;font-weight:700;">See all →</span>
+          </div>
         </div>
-        <div class="recent-mini" id="homeRecentList"></div>
       </div>
 
     </div>
@@ -1279,104 +1303,140 @@
       <div id="rptInsightsPanel">
 
         <!-- 1. Month Projection -->
-        <div class="ins-section-title">Earnings Forecast</div>
         <div class="ins-card indigo">
-          <div class="ins-proj-top">
-            <div>
-              <div class="ins-proj-lbl">Month Projection</div>
-              <div class="ins-proj-val" id="insProjectedVal">₱0</div>
-              <div class="ins-proj-sub" id="insProjectedSub">—</div>
-            </div>
+          <div class="ins-card-hdr">
+            <span class="ins-section-title">Earnings Forecast</span>
             <div class="ins-days-pill" id="insDaysLeft">— days left</div>
           </div>
-          <div class="ins-proj-bar-track">
-            <div class="ins-proj-bar-fill" id="insProjectedBar"></div>
+          <div class="ins-card-body">
+            <div class="ins-proj-top">
+              <div>
+                <div class="ins-proj-lbl">Month Projection</div>
+                <div class="ins-proj-val" id="insProjectedVal">₱0</div>
+                <div class="ins-proj-sub" id="insProjectedSub">—</div>
+              </div>
+            </div>
+            <div class="ins-proj-bar-track">
+              <div class="ins-proj-bar-fill" id="insProjectedBar"></div>
+            </div>
           </div>
         </div>
 
         <!-- 2. Earning Streak -->
-        <div class="ins-section-title">Consistency</div>
         <div class="ins-card amber">
-          <div class="ins-streak-inner">
-            <div class="streak-ring">
-              <div class="streak-num" id="insStreakNum">0</div>
-              <div class="streak-days">days</div>
-            </div>
-            <div style="flex:1;">
-              <div class="streak-lbl">Earning Streak</div>
-              <div class="streak-title" id="insStreakTitle">—</div>
-              <div class="streak-sub"   id="insStreakSub">—</div>
-              <div class="streak-dots"  id="insStreakDots"></div>
+          <div class="ins-card-hdr">
+            <span class="ins-section-title">Consistency</span>
+          </div>
+          <div class="ins-card-body">
+            <div class="ins-streak-inner">
+              <div class="streak-ring">
+                <div class="streak-num" id="insStreakNum">0</div>
+                <div class="streak-days">days</div>
+              </div>
+              <div style="flex:1;">
+                <div class="streak-lbl">Earning Streak</div>
+                <div class="streak-title" id="insStreakTitle">—</div>
+                <div class="streak-sub"   id="insStreakSub">—</div>
+                <div class="streak-dots"  id="insStreakDots"></div>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- 3. Earn by Type -->
-        <div class="ins-section-title">Earn by Transaction Type · This Month</div>
         <div class="ins-card purple">
-          <div id="insTypeRows"></div>
+          <div class="ins-card-hdr">
+            <span class="ins-section-title">Earn by Type · This Month</span>
+          </div>
+          <div class="ins-card-body">
+            <div id="insTypeRows"></div>
+          </div>
         </div>
 
-        <!-- 4. Avg earn/txn -->
-        <div class="ins-section-title">Per-Transaction Quality</div>
-        <div class="ins-mini-card" style="margin-bottom:10px;">
-          <div class="ins-mini-lbl">Avg Earn / Txn</div>
-          <div class="ins-mini-val" id="insAvgEarnVal" style="color:var(--purple);">₱0</div>
-          <div class="ins-mini-delta" id="insAvgEarnDelta" style="color:var(--muted);">—</div>
-        </div>
-
-        <!-- 5. Cash Utilization -->
-        <div class="ins-section-title">Cash Utilization · Today</div>
+        <!-- 4. Cash Flow This Month -->
         <div class="ins-card red">
-          <div class="util-top">
-            <div>
-              <div class="util-lbl">COH Deployed</div>
-              <div class="util-val" id="insUtilPct">0%</div>
+          <div class="ins-card-hdr">
+            <span class="ins-section-title">Cash Flow · This Month</span>
+          </div>
+          <div class="ins-card-body">
+            <!-- Cash-In / Cash-Out side by side -->
+            <div style="display:flex;gap:8px;margin-bottom:12px;">
+              <div style="flex:1;background:var(--s4);border-radius:12px;padding:10px 12px;">
+                <div style="display:flex;align-items:center;gap:5px;margin-bottom:5px;">
+                  <i class="ti ti-arrow-badge-down-filled" style="color:var(--green);font-size:13px;"></i>
+                  <span style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);">Cash-In</span>
+                </div>
+                <div style="font-family:var(--mono);font-size:17px;font-weight:800;color:var(--green);line-height:1;" id="insFlowInAmt">₱0</div>
+                <div style="font-size:10px;color:var(--muted);margin-top:4px;" id="insFlowInCount">0 txns</div>
+              </div>
+              <div style="flex:1;background:var(--s4);border-radius:12px;padding:10px 12px;">
+                <div style="display:flex;align-items:center;gap:5px;margin-bottom:5px;">
+                  <i class="ti ti-arrow-badge-up-filled" style="color:var(--red);font-size:13px;"></i>
+                  <span style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);">Cash-Out</span>
+                </div>
+                <div style="font-family:var(--mono);font-size:17px;font-weight:800;color:var(--red);line-height:1;" id="insFlowOutAmt">₱0</div>
+                <div style="font-size:10px;color:var(--muted);margin-top:4px;" id="insFlowOutCount">0 txns</div>
+              </div>
             </div>
-            <div class="util-warn-pill" id="insUtilWarn"></div>
+            <!-- Deployment ratio bar -->
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
+              <span style="font-size:10px;color:var(--muted);">Cash-Out / Cash-In ratio</span>
+              <div style="display:flex;align-items:center;gap:6px;">
+                <span style="font-family:var(--mono);font-size:14px;font-weight:800;color:var(--amber);" id="insUtilPct">0%</span>
+                <div class="util-warn-pill" id="insUtilWarn"></div>
+              </div>
+            </div>
+            <div class="util-bar-track">
+              <div class="util-bar-fill" id="insUtilBar"></div>
+            </div>
           </div>
-          <div class="util-bar-track">
-            <div class="util-bar-fill" id="insUtilBar"></div>
-          </div>
-          <div class="util-sub" id="insUtilSub">—</div>
         </div>
 
-        <!-- 6. Monthly Earnings History -->
-        <div class="ins-section-title">Earnings History · 6 Months</div>
+        <!-- 5. Monthly Earnings History -->
         <div class="ins-card blue">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:2px;">
-            <div class="ins-mini-lbl">Month-by-Month Trend</div>
+          <div class="ins-card-hdr">
+            <span class="ins-section-title">Earnings History · 6 Months</span>
             <div id="insHistoryBadge"></div>
           </div>
-          <div class="ins-bar-chart" id="insHistoryBars"></div>
-        </div>
-
-        <!-- 7. Best Day of Week -->
-        <div class="ins-section-title">Best Day of Week · All-Time</div>
-        <div class="ins-card teal">
-          <div id="insDowRows"></div>
-        </div>
-
-        <!-- 8. COH vs GCash Balance Split -->
-        <div class="ins-section-title">Balance Health</div>
-        <div class="ins-card amber">
-          <div class="ins-mini-lbl">COH vs GCash Split</div>
-          <div class="ins-ratio-bar">
-            <div class="ins-ratio-coh" id="insRatioCoh"></div>
-            <div class="ins-ratio-cog"></div>
+          <div class="ins-card-body">
+            <div class="ins-history-amts" id="insHistoryAmts"></div>
+            <div class="ins-bar-chart" id="insHistoryBars"></div>
           </div>
-          <div class="ins-ratio-legend">
-            <div class="ins-ratio-leg">
-              <div class="ins-ratio-dot" style="background:var(--amber);"></div>
-              <span id="insRatioCohVal" style="font-family:var(--mono);font-weight:700;color:var(--amber);">₱0</span>
-              <span class="ins-ratio-pct" id="insRatioCohPct">(0%)</span>
-              <span style="color:var(--muted);font-size:10px;">COH</span>
+        </div>
+
+        <!-- 6. Balance Health -->
+        <div class="ins-card amber">
+          <div class="ins-card-hdr">
+            <span class="ins-section-title">Balance Health</span>
+            <span style="font-size:10px;color:var(--muted);">COH vs GCash</span>
+          </div>
+          <div class="ins-card-body">
+            <div style="font-size:12px;color:var(--text2);margin-bottom:2px;">How your capital is distributed right now</div>
+            <div class="ins-ratio-bar">
+              <div class="ins-ratio-coh" id="insRatioCoh"></div>
+              <div class="ins-ratio-cog"></div>
             </div>
-            <div class="ins-ratio-leg">
-              <div class="ins-ratio-dot" style="background:var(--teal);"></div>
-              <span id="insRatioCogVal" style="font-family:var(--mono);font-weight:700;color:var(--teal);">₱0</span>
-              <span class="ins-ratio-pct" id="insRatioCogPct">(0%)</span>
-              <span style="color:var(--muted);font-size:10px;">GCash</span>
+            <div class="ins-ratio-legend">
+              <div class="ins-ratio-leg">
+                <div class="ins-ratio-dot" style="background:var(--amber);"></div>
+                <div>
+                  <div>
+                    <span class="ins-ratio-val" id="insRatioCohVal" style="color:var(--amber);">₱0</span>
+                    <span class="ins-ratio-pct" id="insRatioCohPct">0%</span>
+                  </div>
+                  <div class="ins-ratio-name">Cash on Hand</div>
+                </div>
+              </div>
+              <div class="ins-ratio-leg">
+                <div class="ins-ratio-dot" style="background:var(--teal);"></div>
+                <div>
+                  <div>
+                    <span class="ins-ratio-val" id="insRatioCogVal" style="color:var(--teal);">₱0</span>
+                    <span class="ins-ratio-pct" id="insRatioCogPct">0%</span>
+                  </div>
+                  <div class="ins-ratio-name">GCash Balance</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1597,11 +1657,11 @@
   <!-- BOTTOM NAV -->
   <div id="tabs">
     <div class="nav-inner">
-      <button type="button" class="tab active" onclick="switchTab('home')"     id="tab-home"><span class="tab-icon"><i class="ti ti-home" aria-hidden="true"></i></span>Home</button>
-      <button type="button" class="tab"        onclick="switchTab('log')"      id="tab-log"><span class="tab-icon"><i class="ti ti-list-details" aria-hidden="true"></i></span>Logs</button>
-      <button type="button" class="tab"        onclick="switchTab('reports')"  id="tab-reports"><span class="tab-icon"><i class="ti ti-bulb" aria-hidden="true"></i></span>Insights</button>
-      <button type="button" class="tab"        onclick="switchTab('tally')"    id="tab-tally"><span class="tab-icon"><i class="ti ti-calculator" aria-hidden="true"></i></span>Tally</button>
-      <button type="button" class="tab"        onclick="switchTab('settings')" id="tab-settings"><span class="tab-icon"><i class="ti ti-settings" aria-hidden="true"></i></span>More</button>
+      <button type="button" class="tab active" onclick="switchTab('home')"     id="tab-home"><span class="tab-icon"><i class="ti ti-layout-dashboard" aria-hidden="true"></i></span>Home</button>
+      <button type="button" class="tab"        onclick="switchTab('log')"      id="tab-log"><span class="tab-icon"><i class="ti ti-arrows-exchange" aria-hidden="true"></i></span>Txns</button>
+      <button type="button" class="tab"        onclick="switchTab('reports')"  id="tab-reports"><span class="tab-icon"><i class="ti ti-sparkles" aria-hidden="true"></i></span>Insights</button>
+      <button type="button" class="tab"        onclick="switchTab('tally')"    id="tab-tally"><span class="tab-icon"><i class="ti ti-abacus" aria-hidden="true"></i></span>Tally</button>
+      <button type="button" class="tab"        onclick="switchTab('settings')" id="tab-settings"><span class="tab-icon"><i class="ti ti-dots" aria-hidden="true"></i></span>More</button>
     </div>
   </div>
 
@@ -2242,23 +2302,7 @@ function renderInsights() {
     }
   }
 
-  // ── 4. Avg earn per txn + Peak hour ─────────────────────────────
-  const thisAvgEarn = thisTxns.length ? thisEarn / thisTxns.length : 0;
-  const lastEarn    = lastTxns.reduce((s,t) => s + (parseFloat(t.earn)||0), 0);
-  const lastAvgEarn = lastTxns.length ? lastEarn / lastTxns.length : 0;
-  const avgDeltaPct = lastAvgEarn > 0 ? ((thisAvgEarn - lastAvgEarn) / lastAvgEarn) * 100 : null;
-  set('insAvgEarnVal', fmt(Math.round(thisAvgEarn)));
-  const avgDeltaEl = document.getElementById('insAvgEarnDelta');
-  if (avgDeltaEl) {
-    if (avgDeltaPct === null) {
-      avgDeltaEl.textContent = 'No prior month data';
-      avgDeltaEl.style.color = 'var(--muted)';
-    } else {
-      const up = avgDeltaPct >= 0;
-      avgDeltaEl.innerHTML = `<i class="ti ti-arrow-${up?'up':'down'}" style="font-size:10px;"></i> ${up?'+':''}${avgDeltaPct.toFixed(1)}% vs last mo`;
-      avgDeltaEl.style.color = up ? 'var(--green)' : 'var(--red)';
-    }
-  }
+  // ── 4. (removed Per-Transaction Quality) ────────────────────────
 
   // ── 5. Time-of-Day segments (PHT = UTC+8) ───────────────────────
   const todSegments = [
@@ -2300,19 +2344,31 @@ function renderInsights() {
     }
   }
 
-  // ── 6. Cash Utilization (today) ──────────────────────────────────
-  const todayIn  = todayTxns.filter(t => !t.type.includes('Cash-Out') && !t.type.includes('Rollover')).reduce((s,t) => s+(parseFloat(t.amount)||0), 0);
-  const todayOut = todayTxns.filter(t =>  t.type.includes('Cash-Out') && !t.type.includes('Rollover')).reduce((s,t) => s+(parseFloat(t.amount)||0), 0);
-  const utilPct  = todayIn > 0 ? Math.min(100, Math.round((todayOut / todayIn) * 100)) : 0;
-  const isHigh   = utilPct >= 85;
-  set('insUtilPct', utilPct + '%');
-  set('insUtilSub', fmt(todayOut) + ' out of ' + fmt(todayIn) + ' cash-in deployed today');
+  // ── 6. Cash Flow · This Month ────────────────────────────────────
+  const ciTxns  = thisTxns.filter(t => t.type === 'Cash-In');
+  const coTxns  = thisTxns.filter(t => t.type === 'Cash-Out');
+  const moIn    = ciTxns.reduce((s,t) => s + (parseFloat(t.amount)||0), 0);
+  const moOut   = coTxns.reduce((s,t) => s + (parseFloat(t.amount)||0), 0);
+  const utilPct = moIn > 0 ? Math.min(100, Math.round((moOut / moIn) * 100)) : 0;
+  const isHigh  = utilPct >= 85;
+
+  set('insFlowInAmt',   moIn  > 0 ? fmt(Math.round(moIn))  : '₱0');
+  set('insFlowOutAmt',  moOut > 0 ? fmt(Math.round(moOut)) : '₱0');
+  set('insFlowInCount',  ciTxns.length + ' txn' + (ciTxns.length !== 1 ? 's' : ''));
+  set('insFlowOutCount', coTxns.length + ' txn' + (coTxns.length !== 1 ? 's' : ''));
+  set('insUtilPct', moIn > 0 ? utilPct + '%' : '—');
+
   const warnEl = document.getElementById('insUtilWarn');
   if (warnEl) {
-    warnEl.className = 'util-warn-pill ' + (isHigh ? 'high' : 'ok');
-    warnEl.innerHTML = isHigh
-      ? '<i class="ti ti-alert-triangle" style="font-size:13px;"></i> High'
-      : '<i class="ti ti-circle-check"   style="font-size:13px;"></i> Good';
+    if (moIn === 0) {
+      warnEl.className = 'util-warn-pill ok';
+      warnEl.innerHTML = '<i class="ti ti-minus" style="font-size:13px;"></i> No data';
+    } else {
+      warnEl.className = 'util-warn-pill ' + (isHigh ? 'high' : 'ok');
+      warnEl.innerHTML = isHigh
+        ? '<i class="ti ti-alert-triangle" style="font-size:13px;"></i> High'
+        : '<i class="ti ti-circle-check"   style="font-size:13px;"></i> Good';
+    }
   }
   const utilBarEl = document.getElementById('insUtilBar');
   if (utilBarEl) {
@@ -2328,6 +2384,7 @@ function renderInsights() {
 
   // ── 6. Monthly Earnings History ──────────────────────────────────
   const histBarsEl  = document.getElementById('insHistoryBars');
+  const histAmtsEl  = document.getElementById('insHistoryAmts');
   const histBadgeEl = document.getElementById('insHistoryBadge');
   if (histBarsEl) {
     const months = [];
@@ -2341,17 +2398,28 @@ function renderInsights() {
         .filter(t => { const d = new Date(t.ts); return d.getFullYear() === year && d.getMonth() === month; })
         .reduce((s, t) => s + (parseFloat(t.earn) || 0), 0),
     }));
-    const maxEarn = Math.max(...monthEarns.map(m => m.earn), 1);
+    const maxEarn  = Math.max(...monthEarns.map(m => m.earn), 1);
+    const maxBarPx = 58;
+
+    // Amounts row — above the chart, no overlap possible
+    if (histAmtsEl) {
+      histAmtsEl.innerHTML = monthEarns.map(m => {
+        const cur = m.year === yyyy && m.month === mm;
+        const amt = m.earn >= 1000 ? '₱' + (m.earn / 1000).toFixed(1) + 'k' : m.earn > 0 ? '₱' + Math.round(m.earn) : '—';
+        return `<span style="${cur ? 'color:var(--blue);font-weight:800;' : ''}">${amt}</span>`;
+      }).join('');
+    }
+
+    // Bars + month labels only — no amount text inside columns
     histBarsEl.innerHTML = monthEarns.map(m => {
-      const h   = Math.max(5, Math.round((m.earn / maxEarn) * 100));
+      const h   = Math.max(4, Math.round((m.earn / maxEarn) * maxBarPx));
       const cur = m.year === yyyy && m.month === mm;
       const lbl = new Date(m.year, m.month, 1).toLocaleDateString('en-PH', { month: 'short' });
-      const amt = m.earn >= 1000 ? '₱' + (m.earn / 1000).toFixed(1) + 'k' : m.earn > 0 ? '₱' + Math.round(m.earn) : '';
-      const bg  = cur ? 'linear-gradient(180deg,#C4B5FD,#6366F1)' : `rgba(99,102,241,${(0.2 + (m.earn / maxEarn) * 0.38).toFixed(2)})`;
-      const sh  = cur ? 'box-shadow:0 0 8px rgba(99,102,241,.4);' : '';
+      const opacity = (0.35 + (m.earn / maxEarn) * 0.45).toFixed(2);
+      const bg  = cur ? 'linear-gradient(180deg,#C4B5FD,#6366F1)' : `rgba(99,102,241,${opacity})`;
+      const sh  = cur ? 'box-shadow:0 0 10px rgba(99,102,241,.45);' : '';
       return `<div class="ins-bc-col">
-        <div class="ins-bc-amt">${amt}</div>
-        <div class="ins-bc-bar" style="height:${h}%;background:${bg};${sh}"></div>
+        <div class="ins-bc-bar" style="height:${h}px;background:${bg};${sh}"></div>
         <div class="ins-bc-lbl" style="${cur ? 'color:var(--blue);font-weight:800;' : ''}">${lbl}</div>
       </div>`;
     }).join('');
@@ -2367,34 +2435,7 @@ function renderInsights() {
     }
   }
 
-  // ── 7. Best Day of Week (using device local time for day boundary) ─
-  const dowRowsEl = document.getElementById('insDowRows');
-  if (dowRowsEl) {
-    const DOW = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-    const dowEarns = [0,0,0,0,0,0,0];
-    state.transactions.forEach(t => {
-      const earn = parseFloat(t.earn) || 0;
-      if (earn) dowEarns[new Date(t.ts).getDay()] += earn;
-    });
-    const maxDow  = Math.max(...dowEarns, 1);
-    const peakDow = dowEarns.indexOf(Math.max(...dowEarns));
-    dowRowsEl.innerHTML = [1,2,3,4,5,6,0].map(i => {
-      const earn  = dowEarns[i];
-      const barW  = Math.round((earn / maxDow) * 100);
-      const isPeak = i === peakDow && earn > 0;
-      const color  = isPeak ? 'var(--teal)' : 'var(--blue)';
-      const barBg  = isPeak ? 'linear-gradient(90deg,#2DD4BF,#5EEAD4)' : `rgba(129,140,248,${(0.3 + barW / 200).toFixed(2)})`;
-      const earnStr = earn >= 1000 ? '₱' + (earn/1000).toFixed(1) + 'k' : earn > 0 ? '₱' + Math.round(earn) : '—';
-      return `<div class="ins-dow-row">
-        <div class="ins-dow-day" style="${isPeak?'color:var(--teal);font-weight:800;':''}">${DOW[i]}</div>
-        <div class="ins-dow-track"><div class="ins-dow-fill" style="width:${barW}%;background:${barBg};${isPeak?'box-shadow:0 0 5px rgba(45,212,191,.35);':''}"></div></div>
-        <div class="ins-dow-earn" style="color:${earn>0?color:'var(--muted)'};">${earnStr}</div>
-        ${isPeak ? '<div class="ins-dow-badge">Peak</div>' : ''}
-      </div>`;
-    }).join('');
-  }
-
-  // ── 8. COH vs GCash Balance Split ───────────────────────────────
+  // ── 7. COH vs GCash Balance Split ───────────────────────────────
   const latestTxn = state.transactions.length ? state.transactions[state.transactions.length - 1] : null;
   const cohVal    = latestTxn ? (parseFloat(latestTxn.cohAfter) || 0) : 0;
   const cogVal    = latestTxn ? (parseFloat(latestTxn.cogAfter) || 0) : 0;
@@ -2402,8 +2443,8 @@ function renderInsights() {
   const cohPct    = totalBal > 0 ? Math.round((cohVal / totalBal) * 100) : 50;
   set('insRatioCohVal', fmt(Math.round(cohVal)));
   set('insRatioCogVal', fmt(Math.round(cogVal)));
-  set('insRatioCohPct', '(' + cohPct + '%)');
-  set('insRatioCogPct', '(' + (100 - cohPct) + '%)');
+  set('insRatioCohPct', cohPct + '%');
+  set('insRatioCogPct', (100 - cohPct) + '%');
   const cohBarEl = document.getElementById('insRatioCoh');
   if (cohBarEl) setTimeout(() => { cohBarEl.style.width = cohPct + '%'; }, 60);
 }
@@ -3829,14 +3870,16 @@ function renderHome() {
     if (barEl)  { barEl.className = isUp ? 'mec-bar-fill' : 'mec-bar-fill down'; setTimeout(() => { barEl.style.width = barPct + '%'; }, 60); }
   })();
 
-  // Recent mini list (last 5) — same card format as Log tab
+  // Recent mini list (last 5) — preserves header row, appends txn rows after it
   const recentEl = el('homeRecentList');
   if (recentEl) {
+    // remove previous txn rows (keep first child = header)
+    while (recentEl.children.length > 1) recentEl.removeChild(recentEl.lastChild);
     const recent = [...state.transactions].reverse().slice(0, 5);
     if (!recent.length) {
-      recentEl.innerHTML = '<div style="padding:20px;text-align:center;color:var(--muted);font-size:13px;">No transactions yet</div>';
+      recentEl.insertAdjacentHTML('beforeend', '<div style="padding:20px;text-align:center;color:var(--muted);font-size:13px;">No transactions yet</div>');
     } else {
-      recentEl.innerHTML = recent.map(t => txnHTML(t, false, true)).join('');
+      recentEl.insertAdjacentHTML('beforeend', recent.map(t => txnHTML(t, false, true)).join(''));
     }
   }
 
@@ -4201,6 +4244,11 @@ function updateEarnRing(todayEarn) {
   if (ringPct)   ringPct.textContent = Math.round(pct * 100) + '%';
   if (ringToday) ringToday.textContent = fmt(todayEarn);
   if (ringAvg)   ringAvg.textContent = '7-day avg: ' + fmt(Math.round(avg7));
+  const datePillEl = document.getElementById('earnDatePill');
+  if (datePillEl) {
+    const n = new Date();
+    datePillEl.textContent = n.toLocaleDateString('en-PH', { month:'short', day:'numeric' });
+  }
 
   // Above / below avg pill
   if (pill) {
@@ -4208,13 +4256,14 @@ function updateEarnRing(todayEarn) {
       pill.style.display = 'none';
     } else {
       pill.style.display = 'inline-flex';
-      const above = todayEarn >= avg7;
-      const diff  = Math.abs(todayEarn - avg7);
+      const above   = todayEarn >= avg7;
+      const diff    = Math.abs(todayEarn - avg7);
       const diffPct = avg7 > 0 ? ((diff / avg7) * 100).toFixed(0) : '—';
+      const gap     = avg7 > 0 ? fmt(Math.round(diff)) + ' gap' : '';
       if (above) {
-        pill.style.background    = 'rgba(52,211,153,.1)';
-        pill.style.borderColor   = 'rgba(52,211,153,.3)';
-        pill.style.color         = 'var(--green)';
+        pill.style.background  = 'rgba(52,211,153,.1)';
+        pill.style.borderColor = 'rgba(52,211,153,.3)';
+        pill.style.color       = 'var(--green)';
         pill.innerHTML = `<i class="ti ti-arrow-up" style="font-size:11px;"></i> Above avg${avg7 > 0 ? ' +' + diffPct + '%' : ''}`;
       } else {
         pill.style.background    = 'rgba(248,113,113,.1)';
