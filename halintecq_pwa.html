@@ -745,8 +745,8 @@
   .earn-date-pill { background:var(--s4); border:1px solid var(--border2); border-radius:10px; padding:3px 9px; font-size:10px; font-weight:700; color:var(--text2); }
   .earn-ring { flex-shrink:0; position:relative; }
   .earn-ring svg { display:block; }
-  .ring-bg   { fill:none; stroke:var(--s4); stroke-width:5; }
-  .ring-fill { fill:none; stroke:var(--teal); stroke-width:5; stroke-linecap:round; transform-origin:center; transform:rotate(-90deg); transition:stroke-dashoffset .8s cubic-bezier(.34,1.2,.64,1); filter:drop-shadow(0 0 6px rgba(45,212,191,.4)); }
+  .ring-bg   { fill:none; stroke:var(--s4); stroke-width:9; }
+  .ring-fill { fill:none; stroke:var(--teal); stroke-width:9; stroke-linecap:round; transform-origin:center; transform:rotate(-90deg); transition:stroke-dashoffset .8s cubic-bezier(.34,1.2,.64,1); filter:drop-shadow(0 0 6px rgba(45,212,191,.4)); }
   .ring-pct  { font-family:var(--mono); font-size:9px; font-weight:700; fill:var(--teal); text-anchor:middle; dominant-baseline:middle; }
   .earn-info { flex:1; min-width:0; }
   .earn-label  { font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
@@ -963,7 +963,7 @@
     pointer-events: none;
   }
   .mec-top { margin-bottom:12px; }
-  .mec-label { font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:rgba(167,139,250,.65); margin-bottom:6px; }
+  .mec-label { font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
   .mec-amount {
     font-family:var(--mono); font-size:32px; font-weight:800; letter-spacing:-.8px; line-height:1;
     background:linear-gradient(135deg,#A78BFA 0%,#C4B5FD 55%,#7C3AED 100%);
@@ -1004,7 +1004,7 @@
   [data-theme="ice"] .month-earned-card { background:linear-gradient(135deg,var(--s1) 0%,var(--s2) 100%); border-color:var(--border2); }
   [data-theme="ice"] .month-earned-card::before { background:radial-gradient(circle,rgba(109,40,217,.08) 0%,transparent 65%); }
   [data-theme="ice"] .month-earned-card::after  { background:radial-gradient(circle,rgba(99,102,241,.05) 0%,transparent 65%); }
-  [data-theme="ice"] .mec-label  { color:rgba(109,40,217,.65); }
+  [data-theme="ice"] .mec-label  { color:var(--muted); }
   [data-theme="ice"] .mec-amount { background:linear-gradient(135deg,#7C3AED 0%,#6D28D9 55%,#4C1D95 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
   [data-theme="ice"] .mec-period { color:#6A7290; }
   [data-theme="ice"] .mec-progress-lbl, [data-theme="ice"] .mec-progress-last { color:#6A7290; }
@@ -1091,19 +1091,18 @@
         <div class="earn-hero">
           <div class="earn-hero-hdr">
             <div class="earn-label">Today's Earnings</div>
-            <div class="earn-date-pill" id="earnDatePill">—</div>
           </div>
           <div class="earn-hero-body">
             <div class="earn-ring">
-              <svg width="58" height="58" viewBox="0 0 58 58" aria-hidden="true">
-                <circle class="ring-bg" cx="29" cy="29" r="22"/>
-                <circle class="ring-fill" id="earnRingFill" cx="29" cy="29" r="22" stroke-dasharray="138.2" stroke-dashoffset="138.2"/>
-                <text class="ring-pct" id="earnRingPct" x="29" y="26">0%</text>
-                <text class="ring-pct" x="29" y="36" style="font-size:7px;fill:var(--muted);">vs avg</text>
+              <svg width="72" height="72" viewBox="0 0 66 66" aria-hidden="true">
+                <circle class="ring-bg" cx="33" cy="33" r="27"/>
+                <circle class="ring-fill" id="earnRingFill" cx="33" cy="33" r="27" stroke-dasharray="169.6" stroke-dashoffset="169.6"/>
+                <text class="ring-pct" id="earnRingPct" x="33" y="30">0%</text>
+                <text class="ring-pct" x="33" y="40" style="font-size:7px;fill:var(--muted);">vs avg</text>
               </svg>
             </div>
             <div class="earn-info">
-              <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
                 <div class="earn-amount" id="earnRingToday">₱0</div>
                 <div id="earnAvgPill" style="display:none;align-items:center;gap:4px;border-radius:20px;padding:3px 9px;font-size:11px;font-weight:700;border:1px solid;"></div>
               </div>
@@ -1142,7 +1141,7 @@
         <div class="mec-body">
         <div class="mec-top">
           <div>
-            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
               <div class="mec-amount" id="mecAmount">₱0</div>
               <div class="mec-badge" id="mecBadge">
                 <i class="ti ti-trending-up" id="mecBadgeIcon"></i>
@@ -1404,14 +1403,14 @@
           </div>
         </div>
 
-        <!-- 6. Balance Health -->
+        <!-- 6. Account Health -->
         <div class="ins-card amber">
           <div class="ins-card-hdr">
-            <span class="ins-section-title">Balance Health</span>
+            <span class="ins-section-title">Account Health</span>
             <span style="font-size:10px;color:var(--muted);">COH vs GCash</span>
           </div>
           <div class="ins-card-body">
-            <div style="font-size:12px;color:var(--text2);margin-bottom:2px;">How your capital is distributed right now</div>
+            <div style="font-size:12px;color:var(--text2);margin-bottom:2px;">How your account is distributed right now</div>
             <div class="ins-ratio-bar">
               <div class="ins-ratio-coh" id="insRatioCoh"></div>
               <div class="ins-ratio-cog"></div>
@@ -4231,7 +4230,7 @@ function updateEarnRing(todayEarn) {
 
   // 100% ring = you hit your avg; capped visually at 100%
   const pct = avg7 > 0 ? Math.min(todayEarn / avg7, 1) : (todayEarn > 0 ? 1 : 0);
-  const circumference = 138.2;
+  const circumference = 169.6;
   const offset = circumference - pct * circumference;
 
   const ring      = document.getElementById('earnRingFill');
