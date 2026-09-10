@@ -78,6 +78,12 @@
     --s1:#E4E7EE; --s2:#D8DCE6; --s3:#CDD2DE; --s4:#C2C8D6;
     --border:rgba(62,69,96,.10); --border2:rgba(62,69,96,.18);
     --text:#0E1018; --text2:#3E4560; --muted:#6A7290;
+    --green:#059669; --green-dim:rgba(5,150,105,.1);
+    --red:#DC2626;   --red-dim:rgba(220,38,38,.1);
+    --teal:#0D9488;  --teal-dim:rgba(13,148,136,.1);
+    --amber:#B45309; --amber-dim:rgba(180,83,9,.1);
+    --indigo:#4338CA; --indigo-dim:rgba(67,56,202,.1);
+    --purple:#6D28D9; --purple-dim:rgba(109,40,217,.1);
     --glass-header:rgba(239,241,245,.96); --glass-tabs:rgba(239,241,245,.98); --glass-sticky:rgba(239,241,245,.94);
     --shadow-tabs:0 -4px 24px rgba(62,69,96,.12);
   }
@@ -1504,7 +1510,11 @@
             <div class="ins-proj-top">
               <div>
                 <div class="ins-proj-lbl">Month Projection</div>
-                <div class="ins-proj-val" id="insProjectedVal">₱0</div>
+                <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;">
+                  <span class="ins-proj-val" id="insProjectedMonth">—</span>
+                  <span style="color:var(--border2);font-size:18px;font-weight:300;">|</span>
+                  <span class="ins-proj-val" id="insProjectedVal">₱0</span>
+                </div>
                 <div class="ins-proj-sub" id="insProjectedSub">—</div>
               </div>
             </div>
@@ -2430,7 +2440,8 @@ function renderInsights() {
 
   const set = (id, v) => { const e = document.getElementById(id); if (e) e.textContent = v; };
   set('insProjectedVal', fmt(Math.round(projected)));
-  set('insProjectedSub', monthName + ' · based on ' + fmt(Math.round(dailyAvg)) + '/day avg');
+  set('insProjectedMonth', monthName);
+  set('insProjectedSub', 'based on ' + fmt(Math.round(dailyAvg)) + '/day avg');
   set('insDaysLeft',     daysLeft + ' day' + (daysLeft !== 1 ? 's' : '') + ' left');
   setTimeout(() => {
     const bar = document.getElementById('insProjectedBar');
@@ -3159,6 +3170,7 @@ function applyTheme(name) {
     c.classList.toggle('active', c.dataset.theme === name);
   });
   _syncThemeToggle(name);
+  _syncSidebarBalances();
 }
 
 function loadTheme() {
